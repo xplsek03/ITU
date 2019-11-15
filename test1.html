@@ -1,0 +1,110 @@
+ <!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Stackoverflow.cz - neobvykle testovani pameti</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+
+ 	<link href="https://fonts.googleapis.com/css?family=Arvo&display=swap" rel="stylesheet"> 
+	<link href="https://fonts.googleapis.com/css?family=Open+Sans&display=swap" rel="stylesheet"> 
+
+	<style>
+	* {
+		margin: 0;
+		padding: 0;
+		font-family: 'Open Sans', sans-serif;
+	}
+	</style>
+				
+	<link rel="stylesheet" type="text/css" href="styles.css"/>
+
+</head>
+<body>
+
+	<header class="test-header">
+	<a class="icon" href="#"></a>
+	</header>
+
+<div class="outern test-outern">
+
+	<div class="content test-content">
+
+		<div class="inner-content test-inner-content">
+		
+			<!-- dialogy //-->
+				<div class="dialog disappear" id="dialog1">
+					<form class="default">
+						<label>Username</label><input type="text" />
+						<label>Heslo</label><input type="text" />
+						<label>Heslo valid</label><input type="text" />
+						<input class="button" type="button" value="Pokracuj" onclick="next()" />
+					</form>
+				</div>
+
+				<div class="dialog disappear" id="dialog2">
+					<form class="default">
+						<label>Age</label><input type="text" />
+						<label>Povolani</label>					
+						 <select>
+  							<option value="volvo">Techologie</option>
+  							<option value="saab">Spolecnost</option>
+  							<option value="mercedes">Priroda</option>
+  							<option value="audi">Nope</option>
+						</select> 
+						
+						<label>Deti</label><input type="text" />
+						<label>Married</label><input type="checkbox" />
+						<input class="button" type="button" value="Pokracuj" onclick="next()" />
+					</form>
+				</div>
+
+				<div class="dialog disappear" id="dialog3">
+					<form class="default">
+						<input class="button" type="button" value="Pokracuj" onclick="next()" />
+					</form>
+				</div>
+
+				<div class="dialog disappear" id="dialog_final">
+					Zkontrolujte prosim data ve formulari a potvrdte odeslani.<br>
+				</div>
+
+			<!-- dialogy end //-->
+		
+			<div class="test">	
+				<div class="test-1-line">	
+					<a class="test-1-pexeso" href="#"></a>
+					<a class="test-1-pexeso" href="#"></a>
+					<a class="test-1-pexeso" href="#"></a>
+					<a class="test-1-pexeso" href="#"></a>
+				</div>
+				
+				<div class="test-1-line">	
+					<a class="test-1-pexeso" href="#"></a>
+					<a class="test-1-pexeso" href="#"></a>
+					<a class="test-1-pexeso" href="#"></a>
+					<a class="test-1-pexeso" href="#"></a>
+				</div>
+				
+				<div class="test-1-line">	
+					<a class="test-1-pexeso" href="#"></a>
+					<a class="test-1-pexeso" href="#"></a>
+					<a class="test-1-pexeso" href="#"></a>
+					<a class="test-1-pexeso" href="#"></a>
+				</div>
+			</div>
+		</div>
+	</div>
+
+</div>
+
+<div class="test-nav">
+	<div class="test-nav-inner">
+	1 / 9
+	</div>
+</div>
+
+<script type="text/javascript" src = "js/test1.js"></script>
+
+</body>
+</html> 

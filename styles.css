@@ -1,0 +1,185 @@
+body {
+	font-size: 15px;
+	color: #0b032d;
+	margin: 0;
+	padding: 0;
+}
+
+.outern {
+	width: 80%;
+	margin: 0 auto;
+}
+
+.test-outern {
+	width: 100%;
+}
+
+header {
+	font-family: 'Arvo', serif;
+	color: white;
+	font-size: 30px;
+	background: #843b62;
+	width: 100%;
+	text-align: center;
+	padding-bottom: 20px;	
+}
+
+.test-header {
+	text-align: left;
+	padding: 0;
+}
+
+footer {
+	font-size: 10px;
+	width: 100%;
+	text-align: center;
+	padding: 50px 0;
+	float: left;
+}
+
+.icon {
+	background: url('logo-min.png');
+	width: 60px;
+	height: 49px;
+	display: block;
+}
+
+
+.logo {
+	background: url('logo.png');
+	width: 180px;
+	height: 148px;
+	display: block;
+	margin: 0 auto;
+}
+
+h1, h2, h3 {
+	font-family: 'Arvo', serif;
+	color: #f67e7d;
+	padding-bottom: 15px;
+}
+
+.logo-inner {
+	font-size: 15px;
+}
+
+.content {
+	width: 80%;
+	margin: 0 auto;
+	padding: 50px 0;
+}
+
+.test-content {
+	width: 100%;
+	padding: 0;
+}
+
+.inner-content {
+	float: left;
+	/* width: 100%; */
+}
+
+.test-inner-content {
+	padding: 50px;
+}
+
+p {
+	margin-bottom: 15px;
+}
+
+.button {
+	display: block;
+	padding: 15px;
+	color: white;
+	background: #ffb997;
+	float:left;
+	text-decoration: none;
+	
+}
+
+.square-holder {
+	width: 100%;
+	padding-bottom: 50px;
+	float: left;
+}
+
+.test-nav {
+	position: absolute;
+	width: 100%;
+	background: #f4f4f4;
+	bottom: 0;
+	left: 0;
+}
+
+.test-nav-inner {
+	padding: 10px;
+}
+
+.dialog {
+
+}
+
+.default {
+	width: 50%;
+}
+
+.default input, .default label {
+	float: left;
+	width: 100%;
+}
+
+.default input {
+	margin-bottom: 25px;
+}
+
+.default input[type="button"] {
+	width: auto;
+	border: none;
+}
+
+.disappear {
+	display: none;
+}
+
+/* TEST 1 */
+
+.test-1-pexeso {
+	display: block;
+	background: #e6e6e6;
+	margin: 0 25px 25px 0;
+	height: 120px;
+	width: 120px;
+	float: left;
+    background-size:     cover;
+    background-repeat:   no-repeat;
+    background-position: center center;
+}
+
+.pexeso1 {
+	background-image: url('img/1.jpg');
+}
+
+.pexeso2 {
+	background-image: url('img/2.jpg');
+}
+
+.pexeso3 {
+	background-image: url('img/3.jpg');
+}
+
+.pexeso4 {
+	background-image: url('img/4.jpg');
+}
+
+.pexeso5 {
+	background-image: url('img/5.jpg');
+}
+
+.pexeso6 {
+	background-image: url('img/6.jpg');
+}
+
+.test-1-line {
+	float: left;
+	width: 100%;
+}
