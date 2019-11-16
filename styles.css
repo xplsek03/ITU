@@ -122,6 +122,10 @@ p {
 	float: left;
 }
 
+.margin-bottom {
+	margin-bottom: 25px;
+}
+
 .disappear {
 	display: none;
 }
@@ -212,4 +216,18 @@ p {
 .test-1-line {
 	float: left;
 	width: 100%;
+}
+
+/* TEST 2 */
+
+.test-2-word {
+	font-size: 70px;
+	letter-spacing: 10px;
+	background: transparent;
+	border: none;
+	border-bottom: 5px solid #843b62;
+}
+
+.test-2-blink {
+	background: red;
 }
