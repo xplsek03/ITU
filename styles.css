@@ -1,3 +1,4 @@
+/* LAYOUT */
 body {
 	font-size: 15px;
 	color: #0b032d;
@@ -38,7 +39,7 @@ footer {
 }
 
 .icon {
-	background: url('logo-min.png');
+	background: url('img/logo-min.png');
 	width: 60px;
 	height: 49px;
 	display: block;
@@ -46,7 +47,7 @@ footer {
 
 
 .logo {
-	background: url('logo.png');
+	background: url('img/logo.png');
 	width: 180px;
 	height: 148px;
 	display: block;
@@ -94,6 +95,7 @@ p {
 	background: #ffb997;
 	float:left;
 	text-decoration: none;
+	border: none;
 	
 }
 
@@ -104,7 +106,7 @@ p {
 }
 
 .test-nav {
-	position: absolute;
+	position: fixed;
 	width: 100%;
 	background: #f4f4f4;
 	bottom: 0;
@@ -115,9 +117,16 @@ p {
 	padding: 10px;
 }
 
-.dialog {
-
+.hundred {
+	width: 100%;
+	float: left;
 }
+
+.disappear {
+	display: none;
+}
+
+/* FORMS */
 
 .default {
 	width: 50%;
@@ -128,18 +137,39 @@ p {
 	width: 100%;
 }
 
-.default input {
-	margin-bottom: 25px;
+.default input, .default select {
+	margin: 10px 0;
 }
 
-.default input[type="button"] {
+.default .error {
+	margin-bottom: 15px;
+	color: red;
+	font-weight: bold;
+}
+
+.default input[type="submit"],.default input[type="button"] {
 	width: auto;
 	border: none;
 }
 
-.disappear {
-	display: none;
+.default input[type="radio"], .default input[type="checkbox"] {
+	width: auto;
 }
+
+.radio-label {
+	float: left;
+	margin: 7px 30px 0 15px;
+}
+
+.row {
+	width: 100%;
+	float:left;
+	margin: 10px 0 20px 0;
+}
+
+.default label {
+	font-weight: bold;
+} 
 
 /* TEST 1 */
 
@@ -156,27 +186,27 @@ p {
 }
 
 .pexeso1 {
-	background-image: url('img/1.jpg');
+	background-image: url('img/test1/1.jpg');
 }
 
 .pexeso2 {
-	background-image: url('img/2.jpg');
+	background-image: url('img/test1/2.jpg');
 }
 
 .pexeso3 {
-	background-image: url('img/3.jpg');
+	background-image: url('img/test1/3.jpg');
 }
 
 .pexeso4 {
-	background-image: url('img/4.jpg');
+	background-image: url('img/test1/4.jpg');
 }
 
 .pexeso5 {
-	background-image: url('img/5.jpg');
+	background-image: url('img/test1/5.jpg');
 }
 
 .pexeso6 {
-	background-image: url('img/6.jpg');
+	background-image: url('img/test1/6.jpg');
 }
 
 .test-1-line {
