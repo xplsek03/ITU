@@ -133,6 +133,14 @@ p {
 
 /* FORMS */
 
+input[type=number]::-webkit-inner-spin-button, 
+input[type=number]::-webkit-outer-spin-button { 
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    margin: 0; 
+}
+
 .default {
 	width: 50%;
 }
@@ -221,7 +229,7 @@ p {
 
 /* TEST 2 */
 
-.test-2-word {
+.test-2-word, .test-5-phone {
 	font-size: 70px;
 	letter-spacing: 10px;
 	background: transparent;
@@ -294,4 +302,42 @@ p {
 	visibility: hidden !important;
 }
 
+/* TEST 5 */
+
+.test-5-calling {
+	top: 100px;
+	left: 100px;
+}
+
+.test-5-contact {
+	background: url('img/test5/contact.png');
+	border-radius: 50%;
+	width: 120px;
+	height: 120px;
+	margin: 0 auto;
+}
+
+.test-5-number {
+	padding: 20px 0;
+	font-size: 25px;
+	text-align: center;
+}
+
+.test-5-counter {
+	padding-bottom: 10px;
+	text-align: center;
+	font-size: 18px;
+}
+
+.green {
+	background: green;
+}
+
+.red {
+	background: red;
+}
+
+.right {
+	float: right;
+}
 

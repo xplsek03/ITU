@@ -10,8 +10,6 @@
  	<link href="https://fonts.googleapis.com/css?family=Arvo&display=swap" rel="stylesheet"> 
 	<link href="https://fonts.googleapis.com/css?family=Open+Sans&display=swap" rel="stylesheet"> 
 
-	<script src="https://cdnjs.cloudflare.com/ajax/libs/tone/13.0.1/Tone.min.js"></script>
-
 	<style>
 	* {
 		margin: 0;
@@ -25,6 +23,19 @@
 </head>
 <body>
 
+	<!-- someone calling //-->
+	<div class="alert-cover disappear"></div>
+	<div id="alert1" class="alert disappear test-5-calling">
+  		<div class="hundred margin-bottom" id="disrupt">
+  			<div class="test-5-contact"></div>
+  			<div class="test-5-number">+420 774 861 199</div>
+  			<div class="test-5-counter disappear"></div>
+  		</div>
+  		<a class="button alert-button green" id="takecall" href="#">Prijmout</a>
+  		<a class="button alert-button red right" id="hangcall" href="#">Odmitnout</a>
+	</div>
+	<!-- someone calling - end //-->
+
 	<header class="test-header">
 	<a class="icon" href="#"></a>
 	</header>
@@ -37,21 +48,21 @@
 		
 			<!-- dialogy //-->
 				<div class="dialog" id="dialog1">
-					<div class="hundred margin-bottom">Zapamatujte si nasledujici slovo. Mate na to 8 sekund.</div>
-					<a class="button" href="#" id="submit1">Zobrazit slovo</a>
+					<div class="hundred margin-bottom">Zapamatujte si nasledujici telefonni. Mate na to 10 sekund.</div>
+					<a class="button" href="#" id="submit1">Zobrazit cislo</a>
 				</div>
 
 				<div class="dialog disappear" id="dialog2">
 					<div class="hundred margin-bottom">
-						<input class="test-2-word disappear" id="confused-word" readonly />
+						<!-- hovor //-->
 					</div>
 				</div>
 				
 				<div class="dialog disappear" id="dialog3">
-					<div class="hundred margin-bottom">Zadejte zapamatovane slovo (10 pismen, nezalezi na velikosti):</div>
+					<div class="hundred margin-bottom">Zadejte telefonni cislo (9 cislic bez mezer):</div>
 					<div class="hundred margin-bottom">
 					<form class="default" id="dialogform3">
-						<input type="text" class="test-2-word" id="finalword" name="finalword">
+						<input type="number" class="test-5-phone" id="finalnumber" name="finalnumber">
 						<input type="hidden" value="" id="errcount" />
 					</form>
 					</div>
@@ -61,7 +72,7 @@
 			<!-- dialogy end //-->
 		
 			<div class="test disappear">
-				<input class="test-2-word" id="original-word" value="LOrEMipsUM" readonly /> <!-- sem datrandom sekvenci znaku s rnd uppercase //-->	
+				<input class="test-2-word" type="number" id="original-number" value="731739666" readonly />	
 			</div>
 			
 		</div>
@@ -71,11 +82,11 @@
 
 <div class="test-nav">
 	<div class="test-nav-inner">
-	2 / 9
+	5 / 9
 	</div>
 </div>
 
-<script type="text/javascript" src ="js/test2.js"></script>
+<script type="text/javascript" src ="js/test5.js"></script>
 
 </body>
 </html> 
