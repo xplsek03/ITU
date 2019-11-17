@@ -1,0 +1,95 @@
+ <!DOCTYPE html>
+<html lang="en">
+<head>
+  	<title>Stackoverflow.cz - neobvykle testovani pameti</title>
+  	<meta charset="utf-8">
+  	<meta name="viewport" content="width=device-width, initial-scale=1">
+  	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+ 	<link href="https://fonts.googleapis.com/css?family=Arvo&display=swap" rel="stylesheet"> 
+	<link href="https://fonts.googleapis.com/css?family=Open+Sans&display=swap" rel="stylesheet"> 
+
+	<style>
+	* {
+		margin: 0;
+		padding: 0;
+		font-family: 'Open Sans', sans-serif;
+	}
+	</style>
+				
+	<link rel="stylesheet" type="text/css" href="styles.css" />
+
+</head>
+<body>
+
+	<!-- alerty start //-->
+	
+	<div class="alert-cover disappear"></div>
+	<div id="alert1" class="alert disappear">
+  		<div class="hundred margin-bottom" id="disrupt"></div>
+  		<a class="button alert-button" id="submit2" href="#">OK</a>
+	</div>			
+	
+	<!-- alerty end //-->
+
+	<header class="test-header">
+	<a class="icon" href="#"></a>
+	</header>
+
+<div class="outern test-outern">
+
+	<div class="content test-content">
+
+		<div class="inner-content test-inner-content">
+		
+			<!-- dialogy //-->
+				<div class="dialog" id="dialog1">
+					<div class="hundred margin-bottom">Zapamatujte si poradi, ve kterem zmizi bloky.</div>
+					<a class="button" href="#" id="submit1">Zobrazit bloky</a>
+				</div>
+			<!-- dialogy end //-->
+		
+			<div class="test disappear">
+			
+				<div id="helptext" class="hundred margin-bottom disappear">Kliknete na bloky v poradi, ve kterem zmizely:</div>
+			
+				<div class="margin-bottom" id="disappearing">
+					<div class="test-4-line">
+						<a class="test-4-block" href="#"></a>
+						<a class="test-4-block" href="#"></a>
+						<a class="test-4-block" href="#"></a>
+					</div>
+					
+					<div class="test-4-line">
+						<a class="test-4-block" href="#"></a>
+						<a class="test-4-block" href="#"></a>
+						<a class="test-4-block" href="#"></a>
+					</div>
+					
+					<div class="test-4-line">
+						<a class="test-4-block" href="#"></a>
+						<a class="test-4-block" href="#"></a>
+						<a class="test-4-block" href="#"></a>
+					</div>
+				</div>
+
+				<form class="default disappear" id="dialogform1">
+					<input type="hidden" value="" id="errcount" />
+					<a class="button" href="#" id="submit3">Dalsi test</a>
+				</form>
+			</div>
+			
+		</div>
+	</div>
+
+</div>
+
+<div class="test-nav">
+	<div class="test-nav-inner">
+	4 / 9
+	</div>
+</div>
+
+<script type="text/javascript" src ="js/test4.js"></script>
+
+</body>
+</html> 
