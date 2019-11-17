@@ -23,18 +23,22 @@
 </head>
 <body>
 
-	<!-- someone calling //-->
+	<!-- captcha form //-->
 	<div class="alert-cover disappear"></div>
-	<div id="alert1" class="alert disappear test-5-calling">
-  		<div class="hundred margin-bottom" id="disrupt">
-  			<div class="test-5-contact"></div>
-  			<div class="test-5-number">+420 774 861 199</div>
-  			<div class="test-5-counter disappear"></div>
+	<div id="alert1" class="alert disappear test-6-alert">
+  		<div class="hundred" id="disrupt">
+  		<form onsubmit="validateCaptcha()">
+    		<div id="captcha">
+    		</div>
+    		<div class="hundred margin-bottom">
+    			<input type="text" placeholder="Captcha" id="cpatchaTextBox"/>
+    			<button type="submit" id="captcha-pain">Potvrdit</button>
+    		</div>
+    		<span id="captcha-error"></span>
+  		</form>
   		</div>
-  		<a class="button alert-button green" id="takecall" href="#">Prijmout</a>
-  		<a class="button alert-button red right" id="hangcall" href="#">Odmitnout</a>
 	</div>
-	<!-- someone calling - end //-->
+	<!-- captcha form - end //-->
 
 	<header class="test-header">
 	<a class="icon" href="#"></a>
@@ -48,12 +52,12 @@
 		
 			<!-- dialogy //-->
 				<div class="dialog" id="dialog1">
-					<div class="hundred margin-bottom">Zapamatujte si nasledujici telefonni. Mate na to 10 sekund.</div>
-					<a class="button" href="#" id="submit1">Zobrazit cislo</a>
+					<div class="hundred margin-bottom">Prohlednete si nasledujici nakupni seznam. Mate na to 15 sekund.</div>
+					<a class="button" href="#" id="submit1">Zobrazit nakupni seznam</a>
 				</div>
 				
 				<div class="dialog disappear" id="dialog3">
-					<div class="hundred margin-bottom">Zadejte telefonni cislo (9 cislic bez mezer):</div>
+					<div class="hundred margin-bottom">Vyberte polozky, ktere urcite byly v seznamu:</div>
 					<div class="hundred margin-bottom">
 					<form class="default" id="dialogform3">
 						<input type="number" class="test-5-phone" id="finalnumber" name="finalnumber">
@@ -66,7 +70,7 @@
 			<!-- dialogy end //-->
 		
 			<div class="test disappear">
-				<input class="test-2-word" type="number" id="original-number" value="731739666" readonly />	
+				Fakt dlouhej string veci. Fakt dlouhej string veci. Fakt dlouhej string veci. Fakt dlouhej string veci. Fakt dlouhej string veci. Fakt dlouhej string veci. 
 			</div>
 			
 		</div>
@@ -76,11 +80,11 @@
 
 <div class="test-nav">
 	<div class="test-nav-inner">
-	5 / 9
+	6 / 9
 	</div>
 </div>
 
-<script type="text/javascript" src ="js/test5.js"></script>
+<script type="text/javascript" src ="js/test6.js"></script>
 
 </body>
 </html> 

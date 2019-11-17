@@ -341,3 +341,13 @@ input[type=number]::-webkit-outer-spin-button {
 	float: right;
 }
 
+/* TEST 6 */
+
+canvas {
+	pointer-events: none;
+}
+
+.test-6-alert {
+	top: 100px;
+	left: 100px;
+}
