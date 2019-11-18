@@ -16,6 +16,7 @@ function createCaptcha() {
 	}
 	var canv = document.createElement("canvas");
 	canv.id = "captcha";
+	$("#captcha").addClass("test-6-canvas");
 	canv.width = 200;
 	canv.height = 60;
 	var ctx = canv.getContext("2d");

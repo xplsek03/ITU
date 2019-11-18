@@ -1,0 +1,79 @@
+ <!DOCTYPE html>
+<html lang="en">
+<head>
+  	<title>Stackoverflow.cz - neobvykle testovani pameti</title>
+  	<meta charset="utf-8">
+  	<meta name="viewport" content="width=device-width, initial-scale=1">
+  	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+	<script src="https://cdn.jsdelivr.net/npm/jquery-validation@1.19.1/dist/jquery.validate.min.js"></script>
+
+ 	<link href="https://fonts.googleapis.com/css?family=Arvo&display=swap" rel="stylesheet"> 
+	<link href="https://fonts.googleapis.com/css?family=Open+Sans&display=swap" rel="stylesheet"> 
+
+	<style>
+	* {
+		margin: 0;
+		padding: 0;
+		font-family: 'Open Sans', sans-serif;
+	}
+	</style>
+				
+	<link rel="stylesheet" type="text/css" href="styles.css" />
+
+</head>
+<body>
+
+	<!-- captcha form //-->
+	<div class="alert-cover disappear"></div>
+	<div id="alert1" class="alert disappear test-6-alert">
+  		<div class="hundred" id="disrupt">
+  		<form onsubmit="validateCaptcha()">
+    		<div id="captcha">
+    		</div>
+    		<div class="hundred margin-bottom"><a href="#" class="test-6-new-captcha" onclick="createCaptcha()">Jiny obrazek</a></div>
+    		<div class="hundred margin-bottom">
+    			<input type="text" placeholder="Captcha" id="cpatchaTextBox"/>
+    			<button type="submit" id="captcha-pain">Potvrdit</button>
+    		</div>
+    		<span id="captcha-error"></span>
+  		</form>
+  		</div>
+	</div>
+	<!-- captcha form - end //-->
+
+	<header class="test-header">
+	<a class="icon" href="#"></a>
+	</header>
+
+<div class="outern test-outern">
+
+	<div class="content test-content">
+
+		<div class="inner-content test-inner-content">
+		
+			<!-- dialogy //-->
+				<div class="dialog" id="dialog1">
+					<div class="hundred margin-bottom">Prohlednete si nasledujici test a zapamatujte si odpovedi.</div>
+					<a class="button" href="#" id="submit1">Zobrazit test</a>
+				</div>
+
+			<!-- dialogy end //-->
+		
+			<div class="test disappear">
+			</div>
+			
+		</div>
+	</div>
+
+</div>
+
+<div class="test-nav">
+	<div class="test-nav-inner">
+	7 / 9
+	</div>
+</div>
+
+<script type="text/javascript" src ="js/test7.js"></script>
+
+</body>
+</html> 

@@ -343,7 +343,7 @@ input[type=number]::-webkit-outer-spin-button {
 
 /* TEST 6 */
 
-canvas {
+canvas.test-6-canvas {
 	pointer-events: none;
 }
 
@@ -381,4 +381,10 @@ pre {
 
 .test-6-new-captcha:hover {
 	text-decoration: none;
+}
+
+/* TEST 7 */
+
+.test-7-canvas {
+	position: absolute;
 }
