@@ -60,10 +60,10 @@ $(document).ready(function() {
 				
 				// CREEPY START
 				$(".test").toggleClass("disappear"); // schovej test
-				$("body").css("background", "url('img/test3/creepy.jpg') no-repeat center center fixed");
-				$("body").css("background-size", "cover");
 				let audio = new Audio('sound/test3/creepy.mp3'); // musi mit akorat 3s
 				audio.play();
+				$("body").css("background", "url('img/test3/creepy.jpg') no-repeat center center fixed");
+				$("body").css("background-size", "cover");
 	
 				shuffle(colors); // zamichej znovu barvy
 				// znovu prirad barvy
@@ -74,7 +74,7 @@ $(document).ready(function() {
 		
 				// po uplynuti dalsich 3s
 				setTimeout(function() {
-				
+					audio.pause();
 					$(".test").toggleClass("disappear"); // zobraz test
 					$("body").css("background", "white");
 					$("#dialogform1").toggleClass("disappear"); // ukaz formular odeslani

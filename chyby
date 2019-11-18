@@ -1,0 +1,2 @@
+- vylepsit funkci random, neni moc nahodna teda
+- generovani testu probiha primo z javascriptu, takze funkc epro nahodny generovani obsahu testu (v hodne testech uz je, staci rozsirit pole o dalsi hodnoty / random vygenerovat telefonni cislo apod.)

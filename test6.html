@@ -30,6 +30,7 @@
   		<form onsubmit="validateCaptcha()">
     		<div id="captcha">
     		</div>
+    		<div class="hundred margin-bottom"><a href="#" class="test-6-new-captcha" onclick="createCaptcha()">Jiny obrazek</a></div>
     		<div class="hundred margin-bottom">
     			<input type="text" placeholder="Captcha" id="cpatchaTextBox"/>
     			<button type="submit" id="captcha-pain">Potvrdit</button>
@@ -52,25 +53,29 @@
 		
 			<!-- dialogy //-->
 				<div class="dialog" id="dialog1">
-					<div class="hundred margin-bottom">Prohlednete si nasledujici nakupni seznam. Mate na to 15 sekund.</div>
+					<div class="hundred margin-bottom">Prohlednete si nasledujici uctenku z obchodu a zapamatujte si svuj nakup. Mate na to 15 sekund.</div>
 					<a class="button" href="#" id="submit1">Zobrazit nakupni seznam</a>
-				</div>
-				
-				<div class="dialog disappear" id="dialog3">
-					<div class="hundred margin-bottom">Vyberte polozky, ktere urcite byly v seznamu:</div>
-					<div class="hundred margin-bottom">
-					<form class="default" id="dialogform3">
-						<input type="number" class="test-5-phone" id="finalnumber" name="finalnumber">
-						<input type="hidden" value="" id="errcount" />
-					</form>
-					</div>
-					<a class="button" href="#" id="submit2">Dalsi test</a>
 				</div>
 
 			<!-- dialogy end //-->
 		
 			<div class="test disappear">
-				Fakt dlouhej string veci. Fakt dlouhej string veci. Fakt dlouhej string veci. Fakt dlouhej string veci. Fakt dlouhej string veci. Fakt dlouhej string veci. 
+			
+				<div class="row disappear" id="helptext">
+					<div class="hundred">
+						Firma s potravinami "LEMPL" se vas snazi podvest. Kliknete na polozky, ktere rozhodne NEBYLY na puvodni uctence:
+					</div>
+					<div class="hundred margin-bottom">
+					<form class="default" id="dialogform3">
+						<input type="hidden" value="" id="errcount" />
+					</form>
+					</div>
+					<div class="hundred margin-bottom">
+						<a class="button" href="#" id="submit2">Dalsi test</a>
+					</div>
+				</div>
+			
+				<div id="test-6-receipt"></div>
 			</div>
 			
 		</div>

@@ -351,3 +351,34 @@ canvas {
 	top: 100px;
 	left: 100px;
 }
+
+#test-6-receipt {
+	padding: 20px;
+	float: left;
+	font-family: "Courier New";
+	background: url('img/test6/paper.jpg');
+}
+
+pre {
+	white-space: pre;
+}
+
+.fake-item {
+	color: #0b032d;
+	text-decoration: none;
+}
+.fake-item:hover {
+	cursor: pointer;
+}
+
+.striked {
+	background: #0b032d;
+}
+
+.test-6-new-captcha {
+	color: #0b032d;
+}
+
+.test-6-new-captcha:hover {
+	text-decoration: none;
+}
