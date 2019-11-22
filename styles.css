@@ -411,3 +411,48 @@ pre {
 	border: 1px solid #f4f1f1;
 	margin-bottom: 25px;
 }
+
+/* TEST 8 */
+
+.test-8-block {
+	text-align: center;
+	width: 800px;
+}
+
+#arrow {
+	height: 50px;
+	width: 50px;
+	line-height: 50px;
+   position: absolute;
+   left: 0;
+   color: white;
+   font-weight: bold;
+   text-align: center;
+   font-size: 25px;
+   top: 25px;
+   border-radius: 50%;
+}
+
+#catcher {
+	border: 5px solid green;
+	height: 90px;
+	width: 90px;
+	border-radius: 500%;
+	top: 0px;
+	left: 350px;
+	position: absolute;
+}
+
+#arrow-hero {
+	position: relative;
+	float: left;
+	width: 800px;
+	background: #efefef;
+	height: 100px;
+}
+
+#test-8-image {
+	width: 100%;
+	max-width: 500px;
+	margin-bottom: 25px;
+}
