@@ -388,3 +388,26 @@ pre {
 .test-7-canvas {
 	position: absolute;
 }
+
+.test-7-labyrinth {
+	width: 500px;
+	height: 400px;
+	float: left;
+}
+
+.test-7-answer {
+	padding: 0 20px 0 10px;
+}
+
+.test-7-alert {
+	width: auto;
+}
+
+.test-7-notebook {
+	background: url("img/test7/notebook.jpg");
+	float: left;
+	width: 600px;
+	padding: 20px;
+	border: 1px solid #f4f1f1;
+	margin-bottom: 25px;
+}

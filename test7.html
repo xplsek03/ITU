@@ -1,4 +1,4 @@
- <!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
   	<title>Stackoverflow.cz - neobvykle testovani pameti</title>
@@ -23,23 +23,13 @@
 </head>
 <body>
 
-	<!-- captcha form //-->
 	<div class="alert-cover disappear"></div>
-	<div id="alert1" class="alert disappear test-6-alert">
-  		<div class="hundred" id="disrupt">
-  		<form onsubmit="validateCaptcha()">
-    		<div id="captcha">
-    		</div>
-    		<div class="hundred margin-bottom"><a href="#" class="test-6-new-captcha" onclick="createCaptcha()">Jiny obrazek</a></div>
-    		<div class="hundred margin-bottom">
-    			<input type="text" placeholder="Captcha" id="cpatchaTextBox"/>
-    			<button type="submit" id="captcha-pain">Potvrdit</button>
-    		</div>
-    		<span id="captcha-error"></span>
-  		</form>
-  		</div>
+	<div id="alert1" class="alert test-7-alert disappear" style="width: 500px;">
+		<div class="margin-bottom" style="width: 500px;">
+			Bludiste ovladejte sipkami. Snazte se dostat zelenou teckou (vlevo dole) k fialove tecce.
+		</div>
+		<div class="test-7-labyrinth"></div>
 	</div>
-	<!-- captcha form - end //-->
 
 	<header class="test-header">
 	<a class="icon" href="#"></a>
@@ -53,14 +43,18 @@
 		
 			<!-- dialogy //-->
 				<div class="dialog" id="dialog1">
-					<div class="hundred margin-bottom">Prohlednete si nasledujici test a zapamatujte si odpovedi.</div>
+					<div class="hundred margin-bottom">Prohlednete si nasledujici test a zapamatujte si odpovedi (ABCD).</div>
 					<a class="button" href="#" id="submit1">Zobrazit test</a>
 				</div>
 
 			<!-- dialogy end //-->
 		
-			<div class="test disappear">
+			<div class="test disappear test-7-notebook">
+					<form id="dialogform3">
+						<input type="hidden" value="" id="errcount" />
+					</form>
 			</div>
+			<div class="disappear test-7-send hundred margin-bottom"><a class="button" href="#" id="submit2">Odevzdat test</a></div>
 			
 		</div>
 	</div>

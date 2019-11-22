@@ -3,7 +3,7 @@
 var w = window,
     d = document,
     e = d.documentElement,
-    g = d.getElementsByTagName('.test')[0];
+    g = d.getElementsByTagName('.test-7-labyrinth')[0];
 var x = w.innerWidth || e.clientWidth || g.clientWidth,
         y = w.innerHeight || e.clientHeight || g.clientHeight;
 var width = 500,
@@ -13,7 +13,7 @@ var N = 1 << 0,
     S = 1 << 1,
     W = 1 << 2,
     E = 1 << 3;
-var body = document.querySelectorAll('.test');
+var body = document.querySelectorAll('.test-7-labyrinth');
 var layout = [],
     fronteirTest = [];
 // Determines the size of the blocks 
@@ -163,7 +163,7 @@ function drawPlayer(position) {
     var finishY = 0 * cellSize + (0 + 1) * cellSpacing
     game.beginPath();
     game.arc(finishX + (cellSize / 2), finishY + (cellSize / 2), cellSize / 2, 0, 2 * Math.PI, false);
-    game.fillStyle = "green";
+    game.fillStyle = "#843b62";
     game.fill();
     game.beginPath();
     game.arc(playerX + (cellSize / 2), playerY + (cellSize / 2), cellSize / 2, 0, 2 * Math.PI, false);
@@ -271,7 +271,7 @@ function moveSouth() {
 //Changes the alert when you win the game
 function gameComplete() {
     	got_out(); 
-    }
+	}
 
 (function() {
     var lastTime = 0;
@@ -307,26 +307,93 @@ function animate() {
 animate();
 // BLUDISTE - END
 
+// zobraz bludiste
+function labyrinth() {
+    $(".test").empty();
+    $(".alert-cover").toggleClass("disappear");
+    $("#alert1").toggleClass("disappear");
+    got_out();
+}
 // dostal se ven z bludiste
 function got_out() {
+
+	$(".test-inner-content").prepend("<div class=\"margin-bottom hundred\">Zadejte odpovedi na test, ktere jste se naucili.</div>");
+
+	// nastav uzivatelsky test ted
+	for(let i = 0; i < 8; i++) {
 	
+		$(".test").append("<div class=\"margin-bottom hundred test-7-question\"><strong class=\"hundred margin-bottom\">" + tests[i][0] + "</strong>");
+	
+		for(let j = 1; j < 5; j++) {
+			$(".test-7-question:eq(" + i + ")").append("<input type=\"radio\" name=\"" + i + "\" />" + "<label class=\"test-7-answer\">" + tests[i][j] + "</label>");
+		}
+		$(".test").append("</div>");
+	}
+	$(".test-7-send").toggleClass("disappear");
+    $(".alert-cover").toggleClass("disappear");
+    $("#alert1").toggleClass("disappear");	
+}
+
+// vygeneruj cisla z range
+function range(min, max) {
+    min = Math.ceil(min);
+    max = Math.floor(max);
+    return Math.floor(Math.random() * (max - min + 1)) + min;
+}
+
+// funkce na michani poradi
+function shuffle(a) {
+    for (let i = a.length - 1; i > 0; i--) {
+        const j = Math.floor(Math.random() * (i + 1));
+        [a[i], a[j]] = [a[j], a[i]];
+    }
+    return a;
+}
+
+// db testu s odpovedmi
+var tests = [["Jak se mate?","Napicu","Dobre","Spatne","Ach"],["Tohle je des?","Ano","Ne","Nevim","Mozna"],
+			["Co je dnes za den?","Pondeli","Utery","Streda","Osm"],["Jaka je barva vody?","Podle toho kde ses","Mrdat","Ach jo","Jquery"],
+			["Dodelame projekt do IIS?","Ano","Ne","Mysql","Python3"],["Bash je nejlepsi?","0101011","root","sudo","apt-get"],
+			["Kdo ma dnes narozeniny?","Tvoje mama","Moje mama","Jeji mama","Je to na kokot"],["Je osm a jsem jeste ve skole?","Ano","Ne","Mam to","Kill me pls"]];
+shuffle(tests);
+
+var origin = []; // pole originalnich vysledku
+
+// nastav testy do stranky
+for(let i = 0; i < 8; i++) {
+
+	$(".test").append("<div class=\"margin-bottom hundred test-7-question\"><strong class=\"hundred margin-bottom\">" + tests[i][0] + "</strong>");
+
+	let ch = range(1,4);
+	origin.push(ch);
+
+	for(let j = 1; j < 5; j++) {
+		if(j == ch)
+			$(".test-7-question:eq(" + i + ")").append("<input type=\"radio\" name=\"" + i + "\" checked disabled />" + "<label class=\"test-7-answer\">" + tests[i][j] + "</label>");
+		else
+			$(".test-7-question:eq(" + i + ")").append("<input type=\"radio\" name=\"" + i + "\" disabled />" + "<label class=\"test-7-answer\">" + tests[i][j] + "</label>");
+	}
+	$(".test").append("</div>");
+}
+
+// spocitej kolik mel v testu chyb
+function validate_test() {
+	var err = 0; // pocet chyb
+	for(let i = 0; i < 8; i++) {
+		var indeks = ($(".test-7-question:eq("+ i +")").find(":radio:checked").index() - 1) / 2 + 1; // korekce indexu odpovedi
+		if(indeks !== origin[i])
+			err++;		
+	}
+	return err;
 }
 
 // FLOW
 $(document).ready(function() {
 
 	// odeslani poctu chyb
-    $("#submit2").click(function() {
-    	$("#errcount").val(validate_items()); // zvaliduj kolik tam ma chyb
+	$("#submit2").click(function() {
+    	$("#errcount").val(validate_test()); // zvaliduj kolik tam ma chyb
     	$("#dialogform3").submit(); // odesli formular a hod sem dalsi test
-	});
-
-	// klikni na odeslat captcha, zobraz 3 * chybovou zpravu
-	$("#captcha-pain").click(function() {
-
-		if(!field_ok()) // captcha je schvalne spatne vyplnena, hacker!
-			return;
-		captcha_hell();
 	});
 
 	// kliknuti na start testu
@@ -334,6 +401,11 @@ $(document).ready(function() {
 
     	$(".test").toggleClass("disappear");
     	$("#dialog1").toggleClass("disappear");
+    
+    	// 15s a pak labyrint
+    	setTimeout(function() {
+    		labyrinth();
+    	}, 5000);
     
     });
 });
