@@ -34,91 +34,92 @@
 		<div class="inner-content test-inner-content">
 		
 			<!-- dialogy //-->
-				<div class="dialog disappear" id="dialog1">
+				<div class="dialog" id="dialog1">
 					<form class="default" id="dialogform1">
-						<label>Uzivatelske jmeno</label><input id="username" type="text" name="username">
-						<label>Heslo</label><input type="password" name="pwd1" id="pwd1">
-						<label>Potvrzeni hesla</label><input type="password" id="pwd2" name="pwd2">
-						<input type="button" class="button" value="Pokracuj" id="submit1">
+						<div class="hundred margin-bottom">Vaším úkolem je projít pexesem 3x4 s co nejmenším počtem chybných kliknutí.</div>
+						<a class="button" id="submit1" href="#">Přejdi na pexeso</a>
 					</form>
 				</div>
 
 				<div class="dialog disappear" id="dialog2">
 					<form class="default" id="dialogform2">
-						<label>Vek</label><input type="number" id="age" name="age" />
+						<label>Věk</label><input type="number" id="age" name="age" />
 						<label>Obor</label>					
 						 <select id="spec">
 						 	<option value="">Vyberte obor</option>
   							<option value="t">Techologie</option>
-  							<option value="h">Humanita</option>
-  							<option value="s">Priroda</option>
-  							<option value="n">Nic z toho</option>
+  							<option value="h">Humanitní vědy</option>
+  							<option value="s">Přírodní vědy</option>
+  							<option value="n">Nic z výše uvedeného</option>
 						</select> 
 						
-						<label>Deti</label><input type="number" name="child" id="child" />
-						<label>Zenaty/vdana</label><input type="checkbox" id="married" />
+						<label>Počet dětí</label><input type="number" name="child" id="child" />
+						<label>Ženatý/vdaná</label><input type="checkbox" id="married" />
 						
 						<div class="hundred">
-							<input class="button" type="button" value="Pokracuj" id="submit2" />
+							<input class="button" type="button" value="Zpátky k pexesu" id="submit2" />
 						</div>
 					</form>
 				</div>
 
 				<div class="dialog disappear" id="dialog3">
+					
+					<div class="margin-bottom hundred">Vyberte, jak moc vykonáváte kterou z činností:</div>
+					
 					<form class="default" id="dialogform3">
 					
-						<label>Sledovani TV</label>
+						<label>Sledování TV</label>
 						<div class="row">
-						<input type="radio" name="tv" value="1"> <span class="radio-label">Vubec</span>
-						<input type="radio" name="tv" value="2"> <span class="radio-label">Malo</span>
-						<input type="radio" name="tv" value="3" checked> <span class="radio-label">Celkem</span>
-						<input type="radio" name="tv" value="4"> <span class="radio-label">Hodne</span>
-						<input type="radio" name="tv" value="5"> <span class="radio-label">Porad</span>
+						<input type="radio" name="tv" value="1"> <span class="radio-label">Vůbec</span>
+						<input type="radio" name="tv" value="2"> <span class="radio-label">Málo</span>
+						<input type="radio" name="tv" value="3" checked> <span class="radio-label">Vcelku</span>
+						<input type="radio" name="tv" value="4"> <span class="radio-label">Hodně</span>
+						<input type="radio" name="tv" value="5"> <span class="radio-label">Pořád</span>
 						</div>
 
-						<label>Pouzivani PC</label>
+						<label>Používání PC</label>
 						<div class="row">
-						<input type="radio" name="pc" value="1"> <span class="radio-label">Vubec</span>
-						<input type="radio" name="pc" value="2"> <span class="radio-label">Malo</span>
-						<input type="radio" name="pc" value="3" checked> <span class="radio-label">Celkem</span>
-						<input type="radio" name="pc" value="4"> <span class="radio-label">Hodne</span>
-						<input type="radio" name="pc" value="5"> <span class="radio-label">Porad</span>
+						<input type="radio" name="pc" value="1"> <span class="radio-label">Vůbec</span>
+						<input type="radio" name="pc" value="2"> <span class="radio-label">Málo</span>
+						<input type="radio" name="pc" value="3" checked> <span class="radio-label">Vcelku</span>
+						<input type="radio" name="pc" value="4"> <span class="radio-label">Hodně</span>
+						<input type="radio" name="pc" value="5"> <span class="radio-label">Pořád</span>
 						</div>
 						
-						<label>Pouzivani socialnich siti</label>
+						<label>Používání sociálních sítí</label>
 						<div class="row">
-						<input type="radio" name="fb" value="1"> <span class="radio-label">Vubec</span>
-						<input type="radio" name="fb" value="2"> <span class="radio-label">Malo</span>
-						<input type="radio" name="fb" value="3" checked> <span class="radio-label">Celkem</span>
-						<input type="radio" name="fb" value="4"> <span class="radio-label">Hodne</span>
-						<input type="radio" name="fb" value="5"> <span class="radio-label">Porad</span>
+						<input type="radio" name="fb" value="1"> <span class="radio-label">Vůbec</span>
+						<input type="radio" name="fb" value="2"> <span class="radio-label">Málo</span>
+						<input type="radio" name="fb" value="3" checked> <span class="radio-label">Vcelku</span>
+						<input type="radio" name="fb" value="4"> <span class="radio-label">Hodně</span>
+						<input type="radio" name="fb" value="5"> <span class="radio-label">Pořád</span>
 						</div>
 						
-						<label>Cteni knih</label>
+						<label>Četba knih</label>
 						<div class="row">
-						<input type="radio" name="book" value="1"> <span class="radio-label">Vubec</span>
-						<input type="radio" name="book" value="2"> <span class="radio-label">Malo</span>
-						<input type="radio" name="book" value="3" checked> <span class="radio-label">Celkem</span>
-						<input type="radio" name="book" value="4"> <span class="radio-label">Hodne</span>
-						<input type="radio" name="book" value="5"> <span class="radio-label">Porad</span>
+						<input type="radio" name="book" value="1"> <span class="radio-label">Vůbec</span>
+						<input type="radio" name="book" value="2"> <span class="radio-label">Málo</span>
+						<input type="radio" name="book" value="3" checked> <span class="radio-label">Vcelku</span>
+						<input type="radio" name="book" value="4"> <span class="radio-label">Hodně</span>
+						<input type="radio" name="book" value="5"> <span class="radio-label">Pořád</span>
 						</div>
 
-						<label>Hrani PC her</label>
+						<label>Hraní PC her</label>
 						<div class="row">
-						<input type="radio" name="game" value="1"> <span class="radio-label">Vubec</span>
-						<input type="radio" name="game" value="2"> <span class="radio-label">Malo</span>
-						<input type="radio" name="game" value="3" checked> <span class="radio-label">Celkem</span>
-						<input type="radio" name="game" value="4"> <span class="radio-label">Hodne</span>
-						<input type="radio" name="game" value="5"> <span class="radio-label">Porad</span>
+						<input type="radio" name="game" value="1"> <span class="radio-label">Vůbec</span>
+						<input type="radio" name="game" value="2"> <span class="radio-label">Málo</span>
+						<input type="radio" name="game" value="3" checked> <span class="radio-label">Vcelku</span>
+						<input type="radio" name="game" value="4"> <span class="radio-label">Hodně</span>
+						<input type="radio" name="game" value="5"> <span class="radio-label">Pořád</span>
 						</div>
 
 						<label>Poslech hudby</label>
 						<div class="row">
-						<input type="radio" name="music" value="1"> <span class="radio-label">Vubec</span>
-						<input type="radio" name="music" value="2"> <span class="radio-label">Malo</span>
-						<input type="radio" name="music" value="3" checked> <span class="radio-label">Celkem</span>
-						<input type="radio" name="music" value="4"> <span class="radio-label">Hodne</span>
-						<input type="radio" name="music" value="5"> <span class="radio-label">Porad</span>
+						<input type="radio" name="music" value="1"> <span class="radio-label">Vůbec</span>
+						<input type="radio" name="music" value="2"> <span class="radio-label">Málo</span>
+						<input type="radio" name="music" value="3" checked> <span class="radio-label">Vcelku</span>
+						<input type="radio" name="music" value="4"> <span class="radio-label">Hodně</span>
+						<input type="radio" name="music" value="5"> <span class="radio-label">Pořád</span>
 						</div>
 
 						<input class="button" type="button" value="Pokracuj" id="submit3" />
@@ -126,7 +127,7 @@
 				</div>
 
 				<div class="dialog disappear" id="dialog_final" action="">
-					Gratulujeme, prosli jste prvnim testem. Drzte se.<br>
+					Gratulujeme, prošli jste prvním testem. To je ale pouze začátek.<br>
 					<form id="dialogformfinal" method="post">
 						<input type="hidden" value="" id="final-username" />
 						<input type="hidden" value="" id="final-pwd" />
@@ -142,13 +143,13 @@
 						<input type="hidden" value="" name="final-music" />
 						<input type="hidden" value="" name="final-pc" />
 						
-						<input class="button" type="submit" value="Dalsi test" />
+						<input class="button" type="submit" value="Další test" />
 					</form>
 				</div>
 
 			<!-- dialogy end //-->
 		
-			<div class="test">	
+			<div class="test disappear">	
 				<div class="test-1-line">	
 					<a class="test-1-pexeso" href="#"></a>
 					<a class="test-1-pexeso" href="#"></a>
@@ -177,10 +178,11 @@
 
 <div class="test-nav">
 	<div class="test-nav-inner">
-	1 / 9
+	1 / 8
 	</div>
 </div>
 
+<script type="text/javascript" src ="js/common.js"></script>
 <script type="text/javascript" src ="js/test1.js"></script>
 
 </body>

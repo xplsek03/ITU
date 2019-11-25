@@ -317,7 +317,7 @@ function labyrinth() {
 // dostal se ven z bludiste
 function got_out() {
 
-	$(".test-inner-content").prepend("<div class=\"margin-bottom hundred\">Zadejte odpovedi na test, ktere jste se naucili.</div>");
+	$(".test-inner-content").prepend("<div class=\"margin-bottom hundred\">Vyplňte test. Ještě, že jste se \"učili\".</div>");
 
 	// nastav uzivatelsky test ted
 	for(let i = 0; i < 8; i++) {
@@ -334,27 +334,11 @@ function got_out() {
     $("#alert1").toggleClass("disappear");	
 }
 
-// vygeneruj cisla z range
-function range(min, max) {
-    min = Math.ceil(min);
-    max = Math.floor(max);
-    return Math.floor(Math.random() * (max - min + 1)) + min;
-}
-
-// funkce na michani poradi
-function shuffle(a) {
-    for (let i = a.length - 1; i > 0; i--) {
-        const j = Math.floor(Math.random() * (i + 1));
-        [a[i], a[j]] = [a[j], a[i]];
-    }
-    return a;
-}
-
 // db testu s odpovedmi
-var tests = [["Jak se mate?","Napicu","Dobre","Spatne","Ach"],["Tohle je des?","Ano","Ne","Nevim","Mozna"],
-			["Co je dnes za den?","Pondeli","Utery","Streda","Osm"],["Jaka je barva vody?","Podle toho kde ses","Mrdat","Ach jo","Jquery"],
-			["Dodelame projekt do IIS?","Ano","Ne","Mysql","Python3"],["Bash je nejlepsi?","0101011","root","sudo","apt-get"],
-			["Kdo ma dnes narozeniny?","Tvoje mama","Moje mama","Jeji mama","Je to na kokot"],["Je osm a jsem jeste ve skole?","Ano","Ne","Mam to","Kill me pls"]];
+var tests = [["Nejvyšší hora Kanady?","Mt. Bodington","Sněžka","Chrchlakovský štít","Hády"],["cos(-1)?","0.5","2","0","Ano"],
+			["Co je dnes za den?","Pondělí","Pátek","Třináctého","Čtvrtek"],["Jaka je barva vody?","Podle toho ve kterém moři","Bílá","Modrá","Zelená"],
+			["Jak staré je Janáčkovo divadlo?","180 let","187 let","178 let","188 let"],["Co znamená v počítačovém terminálu znak ~?","root","text start","sudo","hra had"],
+			["Kdo má dnes narozeniny?","Prezident","Vaše matka","Její matka","Matka manželky prezidenta"],["Mezi kterými kruhy pekla se přibližně nachází areál FIT VUT?","4-5","3-4","5-6","On peklo tvoří"]];
 shuffle(tests);
 
 var origin = []; // pole originalnich vysledku
@@ -405,7 +389,7 @@ $(document).ready(function() {
     	// 15s a pak labyrint
     	setTimeout(function() {
     		labyrinth();
-    	}, 5000);
+    	}, 15000);
     
     });
 });

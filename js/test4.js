@@ -1,12 +1,3 @@
-// funkce na michani poradi
-function shuffle(a) {
-    for (let i = a.length - 1; i > 0; i--) {
-        const j = Math.floor(Math.random() * (i + 1));
-        [a[i], a[j]] = [a[j], a[i]];
-    }
-    return a;
-}
-
 var user_input = false; // odkdy muze klikat na prvky aby zmizely
 var count = 10; // pocet vyskakovacich oken
 var order = [0,1,2,3,4,5,6,7,8]; // poradi v kterem budou mizet
@@ -31,7 +22,7 @@ function range(min, max) {
 
 // vygeneruj vyskakovaci okno
 function generate_alert() {
-	$("#disrupt").text("Momentalni percentil (v %): " + score + "\n(hodnota ukazuje, kolik procent testovanych skoncilo v teto fazi testu za Vami).\nZa Vami je: " + score2 + "%");
+	$("#disrupt").text("Váš momentální percentil (v %): " + score + "\n(hodnota říká, kolik procent testovaných skončilo v této fázi testu za Vámi).");
 	$('#alert1').css("top",range(50,200)+"px");
 	$('#alert1').css("left",range(50,600)+"px");
 	$('#alert1').toggleClass("disappear");	

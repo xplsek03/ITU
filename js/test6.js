@@ -32,16 +32,16 @@ function validateCaptcha() {
 	
 	if(field_ok()) { // captcha je spravne vyplnena, ale znaky mohou byt spatne
 		if (document.getElementById("cpatchaTextBox").value == code) { // schvalne vyhod chybu
-			$("#captcha-error").text("Spatne vlozena captcha. Nebo ne? :)");
+			$("#captcha-error").text("Špatně vložená validace. Nebo je to tak schválně? Vlož znovu :)");
 			createCaptcha();
 		}
 		else { // zvoral vyplnovani
-			$("#captcha-error").text("Spatne vlozena captcha.");
+			$("#captcha-error").text("Špatně vložená captcha.");
 			createCaptcha();
 		}
 	}
 	else {
-		$("#captcha-error").text("Spatne vyplneny captcha formular.");
+		$("#captcha-error").text("Špatně vyplněný captcha formulář.");
 		return;
 	}
 }
@@ -57,17 +57,17 @@ function shuffle(a) {
 
 var clicked = 0; // kolik polozek fake seznamu je zacernenych
 var count = 3; // pocet captcha formularu
-var full_list = [['zhulena liska',24],['boxovaci pytel',50],['cervena karkulka',11],['modry notebook',67],['Linz',689],
-				['vanocni cukrovi',22],['google.cz',36],['douhe bidlo',98],['nechutny obed',33],['modry pomeranc',44],
-				['mechanicky pomeranc',1],['rychle a zbesile',3],['dovolena v karibiku',89],['tri muzi ve clunu',6],['dveste parku',5],
-				['parkova oslava',35],['futro',37],['mnozina prvocisel',54],['odkladac',555],['ucpanej zachod',5],
-				['zelena zirafa',150],['modry destnik',30],['golfova hul',58],['pripojka na iphone',111],['mixer na kafe',231],
-				['big shock',2],['vodka s dzusem',467]];
+var full_list = [['Lososový filet',22.0],['Smetana do kávy',0.3],['Rohlík',0.03],['Školní sešit',1.4],['Pečicí papír',2.38],
+				['Vánoční cukroví',14.50],['Rajčatový protlak',1.0],['Tuňáková konzerva',0.98],['Šunkový salám 150g',4.9],['Pomeranč 6ks',3.4],
+				['Red Bull 1ks',1.09],['Balicí papír',3.4],['Broskvová zavařenina',0.66],['Žitný chléb 1ks',2.3],['Kečup 90%',3.4],
+				['Kečup 95%',3.5],['Bageta',0.1],['Smetana na vaření',0.6],['Kapr 700g',16.0],['Záchodová štětka',2.5],
+				['Pivo Heineken',0.88],['Meruňková zmrzlina',4.5],['Mleté hovězí maso',6.35],['Žvýkačky Orbit',0.9],['Žvýkačky Airways',0.7],
+				['Rum Božkov',8.2],['Čínská polévka',0.13]];
 
 shuffle(full_list);
 var list = full_list.slice(0,7); // seznam pouzitych prvku
 
-$('#test-6-receipt').append("<i>LEDL, maloobchodni prodejna</i><br><i>Falesna 1, Brno-Lesna</i><br><i>id uctenky: 456743678976</i><br><i>datum a cas prodeje: 15/4/2019 5:25:25</i><br><i>id pro EET: g0t0h411y0u455</i><br><br>"); // uvod uctenky
+$('#test-6-receipt').append("<i>LÉDL, maloobchodní prodejna</i><br><i>Falešná 1, Brno-Lesná</i><br><i>id účtenky: 456743678976</i><br><i>datum a čas prodeje: 15/4/2019 5:25:25</i><br><i>id pro NéééT: g0t0h411y0u455</i><br><br>"); // uvod uctenky
 
 // napln uctenku
 for(let i = 0; i < list.length; i++) {
@@ -76,13 +76,13 @@ for(let i = 0; i < list.length; i++) {
 	$('#test-6-receipt').append(list[i][1]+"€");
 	$('#test-6-receipt').append('<br>');
 }
-$('#test-6-receipt').append("<br><i>celkova cena: ");
+$('#test-6-receipt').append("<br><i>celková cena: ");
 let price = 0;
 for(let i = 0; i < list.length; i++)
 	price += list[i][1];
 $('#test-6-receipt').append(price + "€</i><br>");
 $('#test-6-receipt').append("<i>celkem zaplaceno: 0€</i><br>");
-$('#test-6-receipt').append("<i>Dekujeme Vam za nakup!</i><br><br>");
+$('#test-6-receipt').append("<i>Děkujeme Vám za nákup!</i><br><br>");
 
 // vytvor falesnou uctenku
 function fake_receipt() {
@@ -92,7 +92,7 @@ function fake_receipt() {
 
 	$('#test-6-receipt').empty(); // vyprazdni uctenku
 
-	$('#test-6-receipt').append("<i>LEMPL, velkoobchodni prodejna</i><br><i>Prava 2, Brno-Stred</i><br><i>id uctenky: 45674367897</i><br><i>datum a cas prodeje: 15/4/2019 5:35:25</i><br><i>id pro EET: l4ugh1ngm4n</i><br><br>"); // uvod uctenky
+	$('#test-6-receipt').append("<i>LEMPL, velkoobchodní prodejna</i><br><i>Zaručeně pravá 2, Brno-Střed</i><br><i>id účtenky: 45674367897</i><br><i>datum a čas prodeje: 15/4/2019 5:35:25</i><br><i>id pro E.T.: l4ugh1ngm4n</i><br><br>"); // uvod uctenky
 	
 	// napln uctenku
 	for(let i = 0; i < fake_list.length; i++) {
@@ -102,13 +102,13 @@ function fake_receipt() {
 		else
 			$('#test-6-receipt').append("<a class=\"fake-item\">" + fake_list[i][0] + " .......... " + fake_list[i][1]+"€</a><br>");
 	}
-	$('#test-6-receipt').append("<br><i>celkova cena: ");
+	$('#test-6-receipt').append("<br><i>celková cena: ");
 	let price = 0;
 	for(let i = 0; i < fake_list.length; i++)
 		price += fake_list[i][1];
 	$('#test-6-receipt').append(price + "€</i><br>");
 	$('#test-6-receipt').append("<i>celkem zaplaceno: 1€</i><br>");
-	$('#test-6-receipt').append("<i>Nedekujeme Vam za nakup!</i><br><br>");
+	$('#test-6-receipt').append("<i>Děkujeme Vám za nákyp!</i><br><br>");
 		
 	$('#test-6-receipt').toggleClass("disappear"); // zobraz uctenku
 	$('#helptext').toggleClass("disappear");

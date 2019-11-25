@@ -1,12 +1,3 @@
-// funkce na michani poradi
-function shuffle(a) {
-    for (let i = a.length - 1; i > 0; i--) {
-        const j = Math.floor(Math.random() * (i + 1));
-        [a[i], a[j]] = [a[j], a[i]];
-    }
-    return a;
-}
-
 var blockbutton = false; // zablokuj klikani na tlacitko vypinace
 var colors = [['0','brown'],['1','purple'],['2','yellow'],['3','red'],['4','pink'],['5','green'],['6','orange'],['7','blue']]; // seznam barev bloku
 shuffle(colors); //zamichej barvy - vychozi poradi
@@ -21,7 +12,7 @@ for(let i = 0; i < 8; i++) {
 // zmen text tlacitka lightswitche
 function changetext() {
 	if(counter > 3) {
-		$("#submit2").text("Vymena zarovky (" + counter + ")");
+		$("#submit2").text("Probíhá výměna žárovky (" + counter + ")");
 		counter--;
 	}
 }

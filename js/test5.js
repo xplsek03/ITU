@@ -12,11 +12,9 @@ function validate_number() {
 	return err;
 }
 
-// vygeneruj cisla z range
-function range(min, max) {
-    min = Math.ceil(min);
-    max = Math.floor(max);
-    return Math.floor(Math.random() * (max - min + 1)) + min;
+// vygeneruj nahodny znak
+function randchar(set) {
+    return set[Math.floor(Math.random() * set.length)];
 }
 
 // zobraz alert, nekdo vola
@@ -30,7 +28,7 @@ function someone_calling() {
 // ukonceni hovoru
 function call_end() {
 	speech.pause();
-	$(".test-5-counter").text("Hovor ukoncen");
+	$(".test-5-counter").text("Hovor ukončen");
 	$("#hangcall").toggleClass("disappear");
 	
 	// nech zmizet alert
@@ -51,7 +49,7 @@ function call_counter() {
 	ringtone.loop = false;
 	ringtone.pause();
 	speech.play();
-	$("#hangcall").text("Zavesit");
+	$("#hangcall").text("Zavěsit");
 	calling = true; // probiha hovor
 	$(".test-5-counter").toggleClass("disappear");
 	
@@ -69,6 +67,14 @@ function call_counter() {
 		call_end();
 	}, 11000); 
 }
+
+// vygeneruj puvodni cislo a uloz ho
+var numb = "";
+numb += randchar("567");
+for(let i = 0; i < 8; i++) {
+	numb += randchar("0123456789");
+}
+$("#original-number").val(numb);
 
 var speech = new Audio('sound/test5/call.mp3'); // hovor
 var ringtone = new Audio('sound/test5/ringtone.mp3'); // vyzvaneni
@@ -104,9 +110,9 @@ $(document).ready(function() {
 	$("#hangcall").click(function() {
 	
 		if(calling) { // probiha hovor, chce zavesit
-			$("#hangcall").text("Nekdo blokuje hovor.");
+			$("#hangcall").text("Někdo blokuje hovor.");
 			setTimeout(function() {
-				$("#hangcall").text("Zavesit");
+				$("#hangcall").text("Zavěsit");
 			}, 1000);
 		}
 		else { // chce odmitnout hovor
@@ -116,7 +122,7 @@ $(document).ready(function() {
 			else if(hangstatus == 1)
 				$("#hangcall").text("...");
 			else if(hangstatus == 2)
-				$("#hangcall").text("Uz to nemackej.");
+				$("#hangcall").text("Už to nemačkej.");
 			else
 				$("#hangcall").toggleClass("disappear");
 			hangstatus++;

@@ -12,22 +12,26 @@ function validate_word() {
 	return err;
 }
 
-// vygeneruj cisla z range
-function range(min, max) {
-    min = Math.ceil(min);
-    max = Math.floor(max);
-    return Math.floor(Math.random() * (max - min + 1)) + min;
-}
-
 // vygeneruj nahodny znak
 function randchar(set) {
     return set[Math.floor(Math.random() * set.length)];
 }
 
-// trochu pouprav slovo
+// trochu pouprav slovo a hlavne ho vytvor
 function confuse_word() {
-	var word = $("#original-word").val();
-	var res = "";
+
+	var word = ""; // nahodne slovo
+	// vytvoreni nahodneho slova
+	for(let i = 0; i < 10; i++) {
+		let l = randchar("abcdefghijklmnopqrstuvwxyz");
+		if(range(0,1)) // 1 ku 2 ze bude male
+			word += l;
+		else
+			word += l.toUpperCase(); // velke			
+	}
+	$("#original-word").val(word); // nahrej slovo
+
+	var res = ""; // vysledne slovo
 	var e = 2; // pocet zmen max 2
 	for(let i = 0; i < word.length; i++) {
 		var c = word.charAt(i);
