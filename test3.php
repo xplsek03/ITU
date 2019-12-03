@@ -1,36 +1,39 @@
- <!DOCTYPE html>
-<html lang="en">
-<head>
-  	<title>Stackoverflow.cz - neobvykle testovani pameti</title>
-  	<meta charset="utf-8">
-  	<meta name="viewport" content="width=device-width, initial-scale=1">
-  	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
- 	<link href="https://fonts.googleapis.com/css?family=Arvo&display=swap" rel="stylesheet"> 
-	<link href="https://fonts.googleapis.com/css?family=Open+Sans&display=swap" rel="stylesheet"> 
-	<script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"></script>
+<?php 
 
-	<style>
-	* {
-		margin: 0;
-		padding: 0;
-		font-family: 'Open Sans', sans-serif;
+	session_start();
+
+	$invalid = False;
+
+	if(!isset($_SESSION['score1']) || empty($_SESSION['score1']))
+   		$invalid = True;
+   		
+   	if(!isset($_POST["errcount"]) || !empty($_POST["errcount"]))
+   		$invalid = True;
+   	if(!is_numeric($_POST["errcount"]))
+   		$invalid = True;
+   	if(!$invalid && ($_POST["errcount"] > 10 || $_POST["errcount"] < 0))
+   		$invalid = True;
+   	
+   	if(!$invalid)
+		$_SESSION["score2"] = $_POST["errcount"];  		
+	else {
+		session_unset();
+		session_destroy();
 	}
-	</style>
-				
-	<link rel="stylesheet" type="text/css" href="styles.css" />
+	
+	$invalid = False; // DEBUG
+?>
 
-</head>
-<body>
-
-	<header class="test-header">
-	<a class="icon" href="#"></a>
-	</header>
+<?php include("head.php"); ?>
+<?php include("test-header.php"); ?>
 
 <div class="outern test-outern">
 
 	<div class="content test-content">
 
 		<div class="inner-content test-inner-content">
+
+			<?php if(!$invalid): ?>
 		
 			<!-- dialogy //-->
 				<div class="dialog" id="dialog1">
@@ -61,6 +64,12 @@
 					<a class="button" href="#" id="submit3">Další test</a>
 				</form>
 			</div>
+
+			<?php else: ?>
+			
+			<?php include("hacker.php"); ?>
+			
+			<?php endif; ?>
 			
 		</div>
 	</div>
@@ -73,8 +82,8 @@
 	</div>
 </div>
 
+
 <script type="text/javascript" src ="js/common.js"></script>
 <script type="text/javascript" src ="js/test3.js"></script>
 
-</body>
-</html> 
+<?php include("footer.php"); ?>

@@ -1,31 +1,5 @@
- <!DOCTYPE html>
-<html lang="en">
-<head>
-  	<title>Stackoverflow.cz - neobvykle testovani pameti</title>
-  	<meta charset="utf-8">
-  	<meta name="viewport" content="width=device-width, initial-scale=1">
-  	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
-	<script src="https://cdn.jsdelivr.net/npm/jquery-validation@1.19.1/dist/jquery.validate.min.js"></script>
-
- 	<link href="https://fonts.googleapis.com/css?family=Arvo&display=swap" rel="stylesheet"> 
-	<link href="https://fonts.googleapis.com/css?family=Open+Sans&display=swap" rel="stylesheet"> 
-
-	<style>
-	* {
-		margin: 0;
-		padding: 0;
-		font-family: 'Open Sans', sans-serif;
-	}
-	</style>
-				
-	<link rel="stylesheet" type="text/css" href="styles.css" />
-
-</head>
-<body>
-
-	<header class="test-header">
-	<a class="icon" href="#"></a>
-	</header>
+<?php include("head.php"); ?>
+<?php include("test-header.php"); ?>
 
 <div class="outern test-outern">
 
@@ -46,7 +20,6 @@
 						<label>Věk</label><input type="number" id="age" name="age" />
 						<label>Obor</label>					
 						 <select id="spec">
-						 	<option value="">Vyberte obor</option>
   							<option value="t">Techologie</option>
   							<option value="h">Humanitní vědy</option>
   							<option value="s">Přírodní vědy</option>
@@ -126,22 +99,22 @@
 					</form>
 				</div>
 
-				<div class="dialog disappear" id="dialog_final" action="">
-					Gratulujeme, prošli jste prvním testem. To je ale pouze začátek.<br>
-					<form id="dialogformfinal" method="post">
-						<input type="hidden" value="" id="final-username" />
-						<input type="hidden" value="" id="final-pwd" />
-						<input type="hidden" value="" name="final-age" />
-						<input type="hidden" value="" name="final-spec" />
-						<input type="hidden" value="" name="final-child" />
-						<input type="hidden" value="" name="final-married" />
+				<div class="dialog disappear" id="dialog_final">
+					<div class="hundred margin-bottom">Gratulujeme, prošli jste prvním testem. To je ale pouze začátek.</div>
+					<form id="dialogformfinal" method="post" action="test2.php">
+						<input type="hidden" value="" id="final_age" name="final_age" />
+						<input type="hidden" value="" id="final_spec" name="final_spec" />
+						<input type="hidden" value="" id="final_child" name="final_child" />
+						<input type="hidden" value="" id="final_married" name="final_married" />
 						
-						<input type="hidden" value="" name="final-tv" />
-						<input type="hidden" value="" name="final-fb" />
-						<input type="hidden" value="" name="final-game" />
-						<input type="hidden" value="" name="final-book" />
-						<input type="hidden" value="" name="final-music" />
-						<input type="hidden" value="" name="final-pc" />
+						<input type="hidden" value="" id="final_tv" name="final_tv" />
+						<input type="hidden" value="" id="final_fb" name="final_fb" />
+						<input type="hidden" value="" id="final_game" name="final_game" />
+						<input type="hidden" value="" id="final_book" name="final_book" />
+						<input type="hidden" value="" id="final_music" name="final_music" />
+						<input type="hidden" value="" id="final_pc" name="final_pc" />
+						
+						<input type="hidden" value="" id="final_time" name="final_time" />
 						
 						<input class="button" type="submit" value="Další test" />
 					</form>
@@ -185,5 +158,4 @@
 <script type="text/javascript" src ="js/common.js"></script>
 <script type="text/javascript" src ="js/test1.js"></script>
 
-</body>
-</html> 
+<?php include("footer.php"); ?>

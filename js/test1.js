@@ -56,19 +56,12 @@ function inlist(x) {
 
 // pocitej cas
 function tajm(t) {
-	if(!dialog)
-    	t++;
+	if(!dialog) {
+    	time++;
+    }
 }
 
-// zvaliduj dialog a pokracuj dal
-function next() {
-    $(".test").toggleClass("disappear");
-    $("#dialog"+active_dialog).toggleClass("disappear");	
-    dialog = false;
-    active_dialog++; // priste budes prepinat dialog o jedna vyssi
-}
-
-setInterval(tajm,1000); // every millisecond call updateDisplay
+setInterval(tajm,1000);
 
 // callback na kliknuti na karticku
 $(".test-1-pexeso").click(function() {
@@ -101,12 +94,14 @@ $(".test-1-pexeso").click(function() {
     				}
     				finished.push(turned[0]); // uloz do seznamu hotovych
     				finished.push(turned[1]); // uloz do seznamu hotovych
-    				dialog = true;	
+    				if(active_dialog < 4)
+    					dialog = true;	
     				move++;
     				turned = []; // vyprazdni seznam 
     				
     				// ZOBRAZ UKONCOVACI DIALOG
     				if(finished.length == 12) {
+    					$("#final_time").val(time);
    						$(".test").toggleClass("disappear");
     					$("#dialog_final").toggleClass("disappear");	    					
     				}
@@ -122,6 +117,18 @@ $(".test-1-pexeso").click(function() {
 // DOM OPS
 
 $(document).ready(function() {
+
+	// zvaliduj dialog a pokracuj dal
+	function nxt() {
+    	console.log(active_dialog);
+    	$(".test").toggleClass("disappear");
+    	$("#dialog"+active_dialog).toggleClass("disappear");	
+    	dialog = false;
+    	active_dialog++; // priste budes prepinat dialog o jedna vyssi
+    	console.log(active_dialog);
+	}
+
+
     $("#dialogform1").validate({
   		rules: {
     		username: {
@@ -162,21 +169,21 @@ $(document).ready(function() {
     });
     $("#submit2").click(function() {
         if($("#dialogform2").valid()) {
-            next();
-            $("#final-age").val($("#age").val());
-            $("#final-spec").val($("#spec").val());
-            $("#final-child").val($("#child").val());
-            $("#final-married").val($("#married").val());
+            nxt();
+            $("#final_age").val($("#age").val());
+            $("#final_spec").val($("#spec").val());
+            $("#final_child").val($("#child").val());
+            $("#final_married").val($("#married").val());
         }
     });
     
     $("#submit3").click(function() {
-        next();
-        $("#final-book").val( $('input[name=book]:checked', '#dialogform3').val() );
-        $("#final-tv").val( $('input[name=tv]:checked', '#dialogform3').val() );
-        $("#final-pc").val( $('input[name=pc]:checked', '#dialogform3').val() );
-        $("#final-game").val( $('input[name=game]:checked', '#dialogform3').val() );
-        $("#final-fb").val( $('input[name=fb]:checked', '#dialogform3').val() );
-        $("#final-music").val( $('input[name=music]:checked', '#dialogform3').val() );
+        nxt();
+        $("#final_book").val( $('input[name=book]:checked', '#dialogform3').val() );
+        $("#final_tv").val( $('input[name=tv]:checked', '#dialogform3').val() );
+        $("#final_pc").val( $('input[name=pc]:checked', '#dialogform3').val() );
+        $("#final_game").val( $('input[name=game]:checked', '#dialogform3').val() );
+        $("#final_fb").val( $('input[name=fb]:checked', '#dialogform3').val() );
+        $("#final_music").val( $('input[name=music]:checked', '#dialogform3').val() );
     });
 });

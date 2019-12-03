@@ -1,5 +1,0 @@
-- vylepsit funkci random, neni moc nahodna teda
-- generovani testu probiha primo z javascriptu, takze funkce pro nahodny generovani obsahu testu (v hodne testech uz je, staci rozsirit pole o dalsi hodnoty / random vygenerovat telefonni cislo apod.)
-- trochu si jeste pohrat s vyhazovanim chyb u captcha formulare, je az PRILIS otravny
-- testu je nakonec 8, na posledni test se nepodarilo napsat peknej skript tak jsem to radsi zahodil
-- odkaz na dialogove okno s formularem pro odeslani feedbacku, sekundarni testovani pres fb/discord?
