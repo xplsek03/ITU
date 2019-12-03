@@ -4,7 +4,7 @@
 
 	$invalid = False;
 
-	if(!isset($_SESSION['score1']) || empty($_SESSION['score1']))
+	if(!isset($_SESSION["score1"]) || empty($_SESSION["score1"]))
    		$invalid = True;
    		
    	if(!isset($_POST["errcount"]) || !empty($_POST["errcount"]))
@@ -59,8 +59,8 @@
 				
 				<a class="test-3-lightswitch disappear button" id ="submit2" href="#">Klikněte sem pro rozsvícení světel</a>
 
-				<form class="default disappear" id="dialogform1">
-					<input type="hidden" value="" id="errcount" />
+				<form class="default disappear" id="dialogform1" action="test4.php" method="post">
+					<input type="hidden" value="" name="errcount" id="errcount" />
 					<a class="button" href="#" id="submit3">Další test</a>
 				</form>
 			</div>

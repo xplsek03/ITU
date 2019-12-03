@@ -1,1 +1,13 @@
-- trochu si jeste pohrat s vyhazovanim chyb u captcha formulare, je az PRILIS otravny
+J:
+- opravit pro chrome a pripadne dalsi prohlizece kdyby nahodou
+- upravit captcha generator, aby vypisoval spravne texty, viz kod
+- udelat prezentaci na pondeli
+- overit jeslti mam to php ok, nedelam v tom vubec
+- doplnit full res. obrazky do ukolu c. 8
+- zkusit spatne vstupy, jestli funguje spravne overovani
+- zkusit na pdo sql injection
+
+M: dodelat generovani vysledku a prohlizeni vysledku uzivatelem
+M: dopsat nejake kecy na uvod
+M: dodelat zpravu
+M: protestovat to od 1-8 v poradi
