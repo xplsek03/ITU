@@ -21,7 +21,6 @@
 		session_destroy();
 	}
 	
-	//$invalid = False; // DEBUG
 ?>
 
 <?php include("head.php"); ?>
@@ -50,7 +49,7 @@
 		
 			<!-- dialogy //-->
 				<div class="dialog" id="dialog1">
-					<div class="hundred margin-bottom">Zapamatujte si následující telefonní číslo. Máte na to 10 sekund.</div>
+					<div class="hundred margin-bottom">Zapněte si zvuk na 75% a zapamatujte si následující telefonní číslo. Máte na to 10 sekund.</div>
 					<a class="button" href="#" id="submit1">Zobrazit číslo</a>
 				</div>
 				

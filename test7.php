@@ -11,7 +11,7 @@
    		$invalid = True;
    	if(!is_numeric($_POST["errcount"]))
    		$invalid = True;
-   	if(!$invalid && ($_POST["errcount"] < 0 || $_POST["errcount"] > 7))
+   	if(!$invalid && ($_POST["errcount"] < 0 || $_POST["errcount"] > 20))
    		$invalid = True;
    	
    	if(!$invalid)
@@ -21,7 +21,6 @@
 		session_destroy();
 	}
 	
-	$invalid = False; // DEBUG
 ?>
 
 <?php include("head.php"); ?>
@@ -45,7 +44,7 @@
 		
 			<!-- dialogy //-->
 				<div class="dialog" id="dialog1">
-					<div class="hundred margin-bottom">Dostali jste šanci prohlédnout si správné výsledky testu před tím, než se bude psát! Zapamatujte si odpovědi na otázky (ABCD), než se profesor za 15 sekund vrátí a test začne.</div>
+					<div class="hundred margin-bottom">Dostali jste šanci prohlédnout si správné výsledky testu před tím, než se bude psát! Zapamatujte si odpovědi na otázky (ABCD), než se profesor přesně za 15 sekund vrátí a test začne.</div>
 					<a class="button" href="#" id="submit1">Zobrazit test</a>
 				</div>
 

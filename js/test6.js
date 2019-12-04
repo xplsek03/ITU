@@ -146,17 +146,15 @@ function validate_items() {
 	var err = 0; // pocet chyb
 	
 	for(let i = 0; i < selected.length; i++) { // neco co nemelo byt zaskrtnute zaskrtnul
-		if($(selected[i]).hasClass("striked"))
-			err++;
+		if($(selected[i]).hasClass("striked")) {
+				err++;
+			}
 	}
 
-	if(selected.length < list.length) {
-		err += (list.length - selected.length); // nejake polozky nevybral, chyba
-	}
+	var striked = $(".striked");
+	if(striked.length < 13)
+		err += (13-striked.length);	
 	
-	if(err > list.length) // korekce chyb
-		err = list.length;
-		
     $("#errcount").val(err); // zvaliduj kolik tam ma chyb
     $("#dialogform3").submit(); // odesli formular a hod sem dalsi test
 	

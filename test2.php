@@ -79,8 +79,6 @@
 		session_unset();
 		session_destroy();
 	}
-	
-	$nonvalid = False; // DEBUG
 ?>
 	
 	<?php include("head.php"); ?>
@@ -96,7 +94,7 @@
 			
 				<!-- dialogy //-->
 					<div class="dialog" id="dialog1">
-						<div class="hundred margin-bottom">Zapamatujte si následující slovo. Máte na to 8 sekund.</div>
+						<div class="hundred margin-bottom">Zapněte si zvuk na 50%. Zapamatujte si následující slovo. Máte na to 8 sekund.</div>
 						<a class="button" href="#" id="submit1">Zobrazit slovo</a>
 					</div>
 	
@@ -107,7 +105,7 @@
 					</div>
 					
 					<div class="dialog disappear" id="dialog3">
-						<div class="hundred margin-bottom">Zadejte původní slovo (10 písmen, nezáleží na velikosti):</div>
+						<div class="hundred margin-bottom">Zadejte původní slovo (10 písmen bez mezer, nezáleží na velikosti):</div>
 						<div class="hundred margin-bottom">
 						<form class="default" id="dialogform3" action="test3.php" method="post">
 							<input type="text" class="test-2-word" id="finalword" name="finalword">

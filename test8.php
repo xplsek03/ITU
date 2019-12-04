@@ -9,8 +9,9 @@
    		
    	if(!isset($_POST["errcount"]) || empty($_POST["errcount"]))
    		$invalid = True;
-   	if(!is_numeric($_POST["errcount"]))
+   	if(!is_numeric($_POST["errcount"])) {
    		$invalid = True;
+   	}
    	if(!$invalid && ($_POST["errcount"] < 0 || $_POST["errcount"] > 8))
    		$invalid = True;
    	
@@ -21,7 +22,6 @@
 		session_destroy();
 	}
 	
-	//$invalid = False; // DEBUG
 ?>
 
 <?php include("head.php"); ?>
@@ -37,7 +37,10 @@
 		
 			<!-- dialogy //-->
 				<div class="dialog" id="dialog1">
-					<div class="hundred margin-bottom">Přehrajeme Vám sekvenci obrázků, každý bude zobrazen po 2 sekundy. Pokud se některý z nich objeví opakovaně, stiskněte MEZERNÍK. V mezičase průběžně mačkejte příslušné šipky, které se budou objevovat pod obrázky, jakmile dojedou do středu zeleného kruhu.</div>
+					<div class="hundred margin-bottom">Přehrajeme Vám sekvenci obrázků, každý bude zobrazen po 2 sekundy. Pokud se některý z nich objeví opakovaně, stiskněte MEZERNÍK. V mezičase průběžně mačkejte příslušné šipky, které se budou objevovat pod obrázky, jakmile dojedou doprostřed zeleného kruhu.
+					<br>Zapněte si zvuk.
+					</div>
+					
 					<a class="button" href="#" id="submit1">Začít přehrávání</a>
 				</div>
 

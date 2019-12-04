@@ -37,9 +37,9 @@
     	$link = new PDO("mysql:host=$dbhost;dbname=$dbname", $dbusername, $dbpassword);
     	$link->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 	
-    	//$statement = $link->prepare("INSERT INTO Results(age,spec,child,married,tv,fb,game,book,pc,music,score) VALUES(?,?,?,?,?,?,?,?,?,?,?)");
+    	$statement = $link->prepare("INSERT INTO Results(age,spec,child,married,tv,fb,game,book,pc,music,score) VALUES(?,?,?,?,?,?,?,?,?,?,?)");
 	
-    	//$statement->execute(array($_SESSION["age"],$_SESSION["spec"],$_SESSION["child"],$_SESSION["married"],$_SESSION["tv"],$_SESSION["fb"],$_SESSION["game"],$_SESSION["book"],$_SESSION["pc"],$_SESSION["music"],$score));
+    	$statement->execute(array($_SESSION["age"],$_SESSION["spec"],$_SESSION["child"],$_SESSION["married"],$_SESSION["tv"],$_SESSION["fb"],$_SESSION["game"],$_SESSION["book"],$_SESSION["pc"],$_SESSION["music"],$score));
 		
 	}		
 	
@@ -66,7 +66,7 @@
 		
 			<h1>Gratulujeme, subjekte!</h1>
 			
-			<p>Váš výsledek byl uložen do databáze a bude použit jako údaj pro srovnání testovacích subjektů za Vámi (a dokonce i před Vámi). V rámci své skupiny dosahujete: DODELAT TABULKY SE SROVNAVACIMI VYSLEDKY PRO JEHO SKUPINY PRACE, VEKU ATD A PAK ZAJIMAVA FAKTA O TOM KDO JE V CEM NEJLEPSI A CO TI NEJLEPSI MAJI ZA VLASTNOSTI (book, game, pc atd.)</p>
+			<p>Váš výsledek byl uložen do databáze a bude použit jako údaj pro srovnání testovacích subjektů za Vámi (a dokonce i před Vámi). V rámci své skupiny dosahujete: DODELAT TABULKY SE SROVNAVACIMI VYSLEDKY PRO JEHO SKUPINY PRACE, VEKU ATD A PAK ZAJIMAVA FAKTA O TOM KDO JE V CEM NEJLEPSI A CO TI NEJLEPSI MAJI ZA VLASTNOSTI (book, game, pc atd.). NA TOMHLE SE PRAVE PRACUJE TAK PROSIME O SHOVIVAVOST.</p>
 	
 		<?php
 			$d = $link->prepare("SELECT * FROM Results WHERE spec=:spec ");

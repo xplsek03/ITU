@@ -22,8 +22,6 @@
 		session_unset();
 		session_destroy();
 	}
-	
-	// $invalid = False; // DEBUG
 ?>
 
 <?php include("head.php"); ?>
@@ -39,7 +37,7 @@
 		
 			<!-- dialogy //-->
 				<div class="dialog" id="dialog1">
-					<div class="hundred margin-bottom">Zapamatujte si pořadí barev. Máte na to 10 sekund.</div>
+					<div class="hundred margin-bottom">Nechte si zapnutý zvuk a zapamatujte si pořadí barev. Máte na to 10 sekund.</div>
 					<a class="button" href="#" id="submit1">Zobrazit barvy</a>
 				</div>
 			<!-- dialogy end //-->

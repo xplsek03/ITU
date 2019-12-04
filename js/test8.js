@@ -6,6 +6,8 @@ var miss = 0; // pocet chyb
 
 var clicked = false; // v tomto kole uz jednou kliknul
 
+var track = new Audio('sound/test8/liquid.mp3'); // ..
+
 // skore obrazku
 var img_miss = 0;
 var img_hits = 0;
@@ -162,6 +164,7 @@ $(document).ready(function() {
 
 	// kliknuti na start testu
     $("#submit1").click(function() {
+    	track.play();
     	$(".test").toggleClass("disappear");
     	$("#dialog1").toggleClass("disappear");
     	setTimeout(function() {

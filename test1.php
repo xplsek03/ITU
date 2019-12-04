@@ -16,6 +16,7 @@
 				</div>
 
 				<div class="dialog disappear" id="dialog2">
+					<div class="hundred margin-bottom">Vyplňte několik anonymních údajů o sobě:</div>
 					<form class="default" id="dialogform2">
 						<label>Věk</label><input type="number" id="age" name="age" />
 						<label>Obor</label>					
@@ -37,7 +38,7 @@
 
 				<div class="dialog disappear" id="dialog3">
 					
-					<div class="margin-bottom hundred">Vyberte, jak moc vykonáváte kterou z činností:</div>
+					<div class="margin-bottom hundred">Vyberte, jak moc vykonáváte následující činnosti:</div>
 					
 					<form class="default" id="dialogform3">
 					

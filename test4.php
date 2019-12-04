@@ -20,8 +20,6 @@
 		session_unset();
 		session_destroy();
 	}
-	
-	$invalid = False; // DEBUG
 ?>
 
 <?php include("head.php"); ?>

@@ -21,7 +21,6 @@
 		session_destroy();
 	}
 	
-	$invalid = False; // DEBUG
 ?>
 
 <?php include("head.php"); ?>
