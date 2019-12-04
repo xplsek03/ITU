@@ -69,7 +69,7 @@
 			<p>Váš výsledek byl uložen do databáze a bude použit jako údaj pro srovnání testovacích subjektů za Vámi (a dokonce i před Vámi). V rámci své skupiny dosahujete: DODELAT TABULKY SE SROVNAVACIMI VYSLEDKY PRO JEHO SKUPINY PRACE, VEKU ATD A PAK ZAJIMAVA FAKTA O TOM KDO JE V CEM NEJLEPSI A CO TI NEJLEPSI MAJI ZA VLASTNOSTI (book, game, pc atd.)</p>
 	
 		<?php
-			$d = $link->prepare("SELECT * FROM Results WHERE spec=:spec");
+			$d = $link->prepare("SELECT * FROM Results WHERE spec=:spec ");
 			$d->execute(['spec' => "h"]); 
 			$data = $d->fetchAll();
 			foreach ($data as $row) {

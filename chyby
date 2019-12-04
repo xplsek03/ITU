@@ -1,7 +1,7 @@
-- opravit pro chrome a pripadne dalsi prohlizece kdyby nahodou
+- dodelat stranku result, z $_SESSION pouzit udaje, vsechno uz je nachystany v kodu
+- opravit pro chrome a pripadne dalsi prohlizece kdyby nahodou. firefox ok
 - udelat prezentaci na pondeli
-- overit jeslti mam to php ok, nedelam v tom vubec
-- doplnit full res. obrazky do ukolu c. 8
+- doplnit obrazky do ukolu c. 8, ty v img/test8 jsou napicu
 - zkusit spatne vstupy, jestli funguje spravne overovani
 - zkusit na pdo sql injection
 - otestovat to na pár lidech
