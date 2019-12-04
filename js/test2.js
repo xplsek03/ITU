@@ -9,7 +9,8 @@ function validate_word() {
 			err++;
 		}
 	}
-	return err;
+    $("#errcount").val(err); // zvaliduj kolik tam ma chyb
+    $("#dialogform3").submit(); // odesli formular a hod sem dalsi test
 }
 
 // vygeneruj nahodny znak
@@ -65,6 +66,14 @@ function confuse_word() {
 // FLOW
 $(document).ready(function() {
 
+ 	$("#finalword").bind("cut copy paste",function(e) {
+ 		e.preventDefault();
+ 	});
+	
+ 	$("#original-word").bind("cut copy paste",function(e) {
+ 		e.preventDefault();
+ 	});
+ 
 	confuse_word(); // poprehazet slovo
 
 	// validace a odeslani zadaneho slova
@@ -78,8 +87,7 @@ $(document).ready(function() {
     });
     $("#submit2").click(function() {
         if($("#dialogform3").valid()) {
-        	$("#errcount").val(validate_word()); // zvaliduj kolik tam ma chyb
-        	$("#dialogform3").submit(); // odesli formular a hod sem dalsi test
+            validate_word(); // spocitej chyby
         }
     });
 

@@ -45,6 +45,14 @@ function samecard(x,y) {
 	return false;
 }
 
+// zvaliduj dialog a pokracuj dal
+function nxt() {
+    $(".test").toggleClass("disappear");
+    $("#dialog"+active_dialog).toggleClass("disappear");	
+    dialog = false;
+    active_dialog++; // priste budes prepinat dialog o jedna vyssi
+}
+
 // prvek je v listu dokoncenych paru
 function inlist(x) {
 	for(let i = 0; i < finished.length; i++) {
@@ -55,7 +63,7 @@ function inlist(x) {
 }
 
 // pocitej cas
-function tajm(t) {
+function tajm() {
 	if(!dialog) {
     	time++;
     }
@@ -85,7 +93,7 @@ $(".test-1-pexeso").click(function() {
     					move++;
     					turned = []; // vyprazdni seznam 
     					touchable = true; // zapni zpet klikani
-    				}, 500); // chvili pockej nez nechas zmizet spatny par
+    				}, 700); // chvili pockej nez nechas zmizet spatny par
     			} 
     			else { // jsou stejne
        				if(active_dialog < 4) { // postupne zobrazis tri dialogy
@@ -117,41 +125,8 @@ $(".test-1-pexeso").click(function() {
 // DOM OPS
 
 $(document).ready(function() {
-
-	// zvaliduj dialog a pokracuj dal
-	function nxt() {
-    	console.log(active_dialog);
-    	$(".test").toggleClass("disappear");
-    	$("#dialog"+active_dialog).toggleClass("disappear");	
-    	dialog = false;
-    	active_dialog++; // priste budes prepinat dialog o jedna vyssi
-    	console.log(active_dialog);
-	}
-
-
-    $("#dialogform1").validate({
-  		rules: {
-    		username: {
-      		required: true,
-      		minlength: 1,
-      		maxlength: 10
-    		},
-    		pwd1: {
-      		required: true,
-      		minlength: 5,
-      		maxlength: 10
-    		},
-    		pwd2: {
-      		required: true,
-      		minlength: 5,
-      		maxlength: 10,
-      		equalTo: "#pwd1"
-    		}
-  		}
-    });
     $("#submit1").click(function() {
-        $("#dialog1").toggleClass("disappear");
-        $(".test").toggleClass("disappear");
+		nxt();
     });
 
     $("#dialogform2").validate({

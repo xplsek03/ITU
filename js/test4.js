@@ -45,8 +45,8 @@ function validate_input() {
 		if(user_order[i] !== order[i])
 			err++;
 	}
-	console.log(err);
-	return err;
+	$('#errcount').val(err);// ukaz tlacitko odeslani a zvaliduj napred
+	$('#dialogform1').toggleClass("disappear"); // ukaz odesilaci formular
 }
 
 $(document).ready(function() {
@@ -58,11 +58,15 @@ $(document).ready(function() {
 			$(this).toggleClass("hide"); // nech kliknutej prvek zmizet
 			if(user_order.length == 9) { // kliknul na vsechny
 				$('#disappearing').toggleClass("disappear"); // ukaz odesilaci formular
-				$('#errcount').val(validate_input());// ukaz tlacitko odeslani a zvaliduj napred
-				$('#dialogform1').toggleClass("disappear"); // ukaz odesilaci formular
+				validate_input();
 			}
 			
 		}
+	});
+
+	// klinkuti na odeslani vysledku testu
+	$("#submit3").click(function() {
+		$('#dialogform1').submit();
 	});
 
 	// klinkuti na potvrzeni alertu

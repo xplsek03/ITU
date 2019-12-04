@@ -9,7 +9,8 @@ function validate_number() {
 			err++;
 		}
 	}
-	return err;
+    $("#errcount").val(err); // zvaliduj kolik tam ma chyb
+    $("#dialogform3").submit(); // odesli formular a hod sem dalsi test
 }
 
 // vygeneruj nahodny znak
@@ -84,6 +85,14 @@ var hangstatus = 0; // kolikrat kliknul na zavesit
 // FLOW
 $(document).ready(function() {
 
+ 	$("#finalnumber").bind("cut copy paste",function(e) {
+ 		e.preventDefault();
+ 	});
+	
+ 	$("#original-number").bind("cut copy paste",function(e) {
+ 		e.preventDefault();
+ 	});
+
 	// validace a odeslani zadaneho slova
     $("#dialogform3").validate({
   		rules: {
@@ -95,8 +104,7 @@ $(document).ready(function() {
     });
     $("#submit2").click(function() {
         if($("#dialogform3").valid()) {
-        	$("#errcount").val(validate_number()); // zvaliduj kolik tam ma chyb
-        	$("#dialogform3").submit(); // odesli formular a hod sem dalsi test
+			validate_number();
         }
     });
 

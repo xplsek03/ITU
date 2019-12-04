@@ -55,9 +55,9 @@
 			$nonvalid = True;
 			
 		if(!$nonvalid && $_POST["final_married"] != "")
-			$_SESSION["married"] = True;
-		else
 			$_SESSION["married"] = False;
+		else
+			$_SESSION["married"] = True;
 		
 		if(!$nonvalid && (!is_numeric($_SESSION["tv"]) || !is_numeric($_SESSION["fb"]) || !is_numeric($_SESSION["game"]) ||
 						  !is_numeric($_SESSION["pc"]) || !is_numeric($_SESSION["music"]) || !is_numeric($_SESSION["book"])))	

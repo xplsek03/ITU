@@ -17,33 +17,34 @@ function createCaptcha() {
 	var canv = document.createElement("canvas");
 	canv.id = "captcha";
 	$("#captcha").addClass("test-6-canvas");
-	canv.width = 200;
+	canv.width = 250;
 	canv.height = 60;
 	var ctx = canv.getContext("2d");
 	ctx.font = "25px Georgia";
 	ctx.strokeText(captcha.join(""), 0, 30);
 	//storing captcha so that can validate you can save it somewhere else according to your specific requirements
 	code = captcha.join("");
-	console.log(code);
 	document.getElementById("captcha").appendChild(canv); // adds the canvas to the body element
 }
 function validateCaptcha() {
 	event.preventDefault();
 	
-	if(field_ok()) { // captcha je spravne vyplnena, ale znaky mohou byt spatne
-		if (document.getElementById("cpatchaTextBox").value == code) { // schvalne vyhod chybu
+	if(!field_ok()) { // captcha je schvalne spatne vyplnena, hacker!
+		if(count < 3)
+			count++; // vrat hacker attempt zpatky za trest
+		$("#captcha-error").text("Schválně špatně vyplněný captcha formulář.");
+	}
+	else { // nesnazi se to obejit
+		if(document.getElementById("cpatchaTextBox").value == code) { // schvalne vyhod chybu
 			$("#captcha-error").text("Špatně vložená validace. Nebo je to tak schválně? Vlož znovu :)");
-			createCaptcha();
 		}
-		else { // zvoral vyplnovani
-			$("#captcha-error").text("Špatně vložená captcha.");
-			createCaptcha();
+		else {
+			$("#captcha-error").text("Špatně vyplněný captcha formulář.");
 		}
 	}
-	else {
-		$("#captcha-error").text("Špatně vyplněný captcha formulář.");
-		return;
-	}
+	$("#cpatchaTextBox").val("");
+	captcha_hell();
+	
 }
 
 // funkce na michani poradi
@@ -56,7 +57,7 @@ function shuffle(a) {
 }
 
 var clicked = 0; // kolik polozek fake seznamu je zacernenych
-var count = 3; // pocet captcha formularu
+var count = 2; // pocet captcha formularu
 var full_list = [['Lososový filet',22.0],['Smetana do kávy',0.3],['Rohlík',0.03],['Školní sešit',1.4],['Pečicí papír',2.38],
 				['Vánoční cukroví',14.50],['Rajčatový protlak',1.0],['Tuňáková konzerva',0.98],['Šunkový salám 150g',4.9],['Pomeranč 6ks',3.4],
 				['Red Bull 1ks',1.09],['Balicí papír',3.4],['Broskvová zavařenina',0.66],['Žitný chléb 1ks',2.3],['Kečup 90%',3.4],
@@ -156,23 +157,27 @@ function validate_items() {
 	if(err > list.length) // korekce chyb
 		err = list.length;
 		
-	return err;
+    $("#errcount").val(err); // zvaliduj kolik tam ma chyb
+    $("#dialogform3").submit(); // odesli formular a hod sem dalsi test
 	
 }
 
 // over, jestli se formular captcha pokusil spravne vyplnit
 function field_ok() {
 	var s = document.getElementById("cpatchaTextBox").value;
-	if(s[0] !== code[0] || s[1] !== code[1]) // prvni a druhe znaky nesedi, hacker se musi trochu snazit
+	if(s[0] !== code[0] || s[1] !== code[1])  {// prvni a druhe znaky nesedi, hacker se musi trochu snazit
 		return 0;
-	if(s.length !== 6) // delka neni sest znaku
+	}
+	if(s.length !== 6) {// delka neni sest znaku
 		return 0;
+	}
 	// porovnej postupne znaky, jeslti tam nezadal nejake stejne
 	for(let i = 0; i < s.length-1; i++) {
 		var c = s.charAt(i); // aktualni znak
 		for(let j = i+1; j < s.length; j++) {
-			if(c == s[j])
+			if(c == s[j]) {
 				return 0;
+			}
 		}
 	}
 	return 1; // v poradku, nepokousel se podvadet
@@ -203,16 +208,7 @@ $(document).ready(function() {
 
 	// odeslani poctu chyb
     $("#submit2").click(function() {
-    	$("#errcount").val(validate_items()); // zvaliduj kolik tam ma chyb
-    	$("#dialogform3").submit(); // odesli formular a hod sem dalsi test
-	});
-
-	// klikni na odeslat captcha, zobraz 3 * chybovou zpravu
-	$("#captcha-pain").click(function() {
-
-		if(!field_ok()) // captcha je schvalne spatne vyplnena, hacker!
-			return;
-		captcha_hell();
+		validate_items();
 	});
 
 	// kliknuti na start testu

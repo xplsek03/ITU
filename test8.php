@@ -7,7 +7,7 @@
 	if(!isset($_SESSION["score6"]) || empty($_SESSION["score6"]))
    		$invalid = True;
    		
-   	if(!isset($_POST["errcount"]) || !empty($_POST["errcount"]))
+   	if(!isset($_POST["errcount"]) || empty($_POST["errcount"]))
    		$invalid = True;
    	if(!is_numeric($_POST["errcount"]))
    		$invalid = True;
@@ -21,15 +21,11 @@
 		session_destroy();
 	}
 	
-	$invalid = False; // DEBUG
+	//$invalid = False; // DEBUG
 ?>
 
 <?php include("head.php"); ?>
 <?php include("test-header.php"); ?>
-
-	<header class="test-header">
-	<a class="icon" href="#"></a>
-	</header>
 
 <div class="outern test-outern">
 

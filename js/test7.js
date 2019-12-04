@@ -312,7 +312,6 @@ function labyrinth() {
     $(".test").empty();
     $(".alert-cover").toggleClass("disappear");
     $("#alert1").toggleClass("disappear");
-    got_out();
 }
 // dostal se ven z bludiste
 function got_out() {
@@ -368,7 +367,8 @@ function validate_test() {
 		if(indeks !== origin[i])
 			err++;		
 	}
-	return err;
+    $("#errcount").val(err); // zvaliduj kolik tam ma chyb
+    $("#dialogform3").submit(); // odesli formular a hod sem dalsi test
 }
 
 // FLOW
@@ -376,8 +376,7 @@ $(document).ready(function() {
 
 	// odeslani poctu chyb
 	$("#submit2").click(function() {
-    	$("#errcount").val(validate_test()); // zvaliduj kolik tam ma chyb
-    	$("#dialogform3").submit(); // odesli formular a hod sem dalsi test
+		validate_test();
 	});
 
 	// kliknuti na start testu

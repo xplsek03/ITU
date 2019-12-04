@@ -7,7 +7,7 @@
 	if(!isset($_SESSION["score5"]) || empty($_SESSION["score5"]))
    		$invalid = True;
    		
-   	if(!isset($_POST["errcount"]) || !empty($_POST["errcount"]))
+   	if(!isset($_POST["errcount"]) || empty($_POST["errcount"]))
    		$invalid = True;
    	if(!is_numeric($_POST["errcount"]))
    		$invalid = True;
@@ -35,10 +35,6 @@
 		<div class="test-7-labyrinth"></div>
 	</div>
 
-	<header class="test-header">
-	<a class="icon" href="#"></a>
-	</header>
-
 <div class="outern test-outern">
 
 	<div class="content test-content">
@@ -56,11 +52,13 @@
 			<!-- dialogy end //-->
 		
 			<div class="test disappear test-7-notebook">
+			</div>
+			<div class="disappear test-7-send hundred margin-bottom">
 					<form id="dialogform3" action="test8.php" method="post">
 						<input type="hidden" value="" name="errcount" id="errcount" />
+						<input type="submit" class="button" id="submit2" value="Odevzdat test">
 					</form>
 			</div>
-			<div class="disappear test-7-send hundred margin-bottom"><a class="button" href="#" id="submit2">Odevzdat test</a></div>
 
 			<?php else: ?>
 			

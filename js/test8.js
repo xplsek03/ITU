@@ -95,14 +95,18 @@ $(document).on('keyup',function(e) {
 		}
 });
 
-// spocitej pocet chyb
+// spocitej pocet chyb a odesli formular
 function count_result() {
+	var result;
 	if((img_hits == 0 && img_miss == 0) || (miss == 0 && hits == 0)) // kdyby delal jenom jednu cast zaraz
-		return 0;
-	var c = 2 * img_hits + hits - 2 * img_miss - miss;
-	if(c < 0)
-		return 0;
-	return c;	
+		result = 0;
+	else
+		result = 2 * img_hits + hits - 2 * img_miss - miss;
+	if(result < 0)
+		result = 0;
+		
+    $("#errcount").val(result); // zvaliduj kolik udelal chyb
+    $("#dialogform3").submit(); // odesli formular a ukonci testovani
 }
 
 // FLOW
@@ -112,9 +116,7 @@ $(document).ready(function() {
 	function loop_over() {
 	
 		if(finished) { // konec
-    			$("#errcount").val(count_result()); // zvaliduj kolik udelal chyb
-    			$("#dialogform3").submit(); // odesli formular a ukonci testovani
-    			console.log($("#errcount").val());
+			count_result();
 			return;
 		}
 			

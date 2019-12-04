@@ -7,7 +7,7 @@
 	if(!isset($_SESSION["score3"]) || empty($_SESSION["score3"]))
    		$invalid = True;
    		
-   	if(!isset($_POST["errcount"]) || !empty($_POST["errcount"]))
+   	if(!isset($_POST["errcount"]) || empty($_POST["errcount"]))
    		$invalid = True;
    	if(!is_numeric($_POST["errcount"]))
    		$invalid = True;
@@ -21,7 +21,7 @@
 		session_destroy();
 	}
 	
-	$invalid = False; // DEBUG
+	//$invalid = False; // DEBUG
 ?>
 
 <?php include("head.php"); ?>
@@ -39,10 +39,6 @@
   		<a class="button alert-button red right" id="hangcall" href="#">Odmítnout</a>
 	</div>
 	<!-- someone calling - end //-->
-
-	<header class="test-header">
-	<a class="icon" href="#"></a>
-	</header>
 
 <div class="outern test-outern">
 

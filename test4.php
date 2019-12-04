@@ -7,7 +7,7 @@
 	if(!isset($_SESSION["score2"]) || empty($_SESSION["score2"]))
    		$invalid = True;
    		
-   	if(!isset($_POST["errcount"]) || !empty($_POST["errcount"]))
+   	if(!isset($_POST["errcount"]) || empty($_POST["errcount"]))
    		$invalid = True;
    	if(!is_numeric($_POST["errcount"]))
    		$invalid = True;
@@ -36,10 +36,6 @@
 	</div>			
 	
 	<!-- alerty end //-->
-
-	<header class="test-header">
-	<a class="icon" href="#"></a>
-	</header>
 
 <div class="outern test-outern">
 

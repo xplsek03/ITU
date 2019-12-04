@@ -95,7 +95,7 @@
 						<input type="radio" name="music" value="5"> <span class="radio-label">Pořád</span>
 						</div>
 
-						<input class="button" type="button" value="Pokracuj" id="submit3" />
+						<input class="button" type="button" value="Pokračuj" id="submit3" />
 					</form>
 				</div>
 

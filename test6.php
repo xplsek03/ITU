@@ -7,7 +7,7 @@
 	if(!isset($_SESSION["score4"]) || empty($_SESSION["score4"]))
    		$invalid = True;
    		
-   	if(!isset($_POST["errcount"]) || !empty($_POST["errcount"]))
+   	if(!isset($_POST["errcount"]) || empty($_POST["errcount"]))
    		$invalid = True;
    	if(!is_numeric($_POST["errcount"]))
    		$invalid = True;
@@ -34,9 +34,9 @@
   		<form onsubmit="validateCaptcha()">
     		<div id="captcha">
     		</div>
-    		<div class="hundred margin-bottom"><a href="#" class="test-6-new-captcha" onclick="createCaptcha()">Jiný obrazek</a></div>
+    		<div class="hundred margin-bottom"><a href="#" class="test-6-new-captcha" onclick="createCaptcha()">Jiný obrázek</a></div>
     		<div class="hundred margin-bottom">
-    			<input type="text" placeholder="Captcha" id="cpatchaTextBox"/>
+    			<input type="text" placeholder="Captcha" id="cpatchaTextBox" />
     			<button type="submit" id="captcha-pain">Potvrdit</button>
     		</div>
     		<span id="captcha-error"></span>

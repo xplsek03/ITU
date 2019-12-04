@@ -17,7 +17,7 @@ function changetext() {
 	}
 }
 
-// zvaliduj poradi barev
+// zvaliduj poradi barev a odesli
 function validate_colors() {
 	var err = 0; // pocet chyb
 	for(let i = 0; i < 8; i++) {
@@ -25,15 +25,15 @@ function validate_colors() {
 		if(c !== origin[i][0])
 			err++;
 	}
-	return err;
+	$("#errcount").val(err);
+	$("#dialogform1").submit();	
 } 
 
 $(document).ready(function() {
 
 	// klikni na odeslani formulare
 	$("#submit3").click(function() {
-		$("#errcount").val(validate_colors());
-		$("dialogform1").submit();		
+		validate_colors();	
 	});
 
 	// kliknuti na "rozsvitit" :))

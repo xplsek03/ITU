@@ -1,16 +1,18 @@
 <?php 
 
 	session_start();
-
+	
 	$invalid = False;
 
-	if(!isset($_SESSION["score1"]) || empty($_SESSION["score1"]))
+	if(!isset($_SESSION["score1"]) || empty($_SESSION["score1"])) {
    		$invalid = True;
-   		
-   	if(!isset($_POST["errcount"]) || !empty($_POST["errcount"]))
+   	}
+ 		
+   	if(!isset($_POST["errcount"]) || empty($_POST["errcount"]))
    		$invalid = True;
-   	if(!is_numeric($_POST["errcount"]))
+   	if(!is_numeric($_POST["errcount"])) {
    		$invalid = True;
+   		}
    	if(!$invalid && ($_POST["errcount"] > 10 || $_POST["errcount"] < 0))
    		$invalid = True;
    	
@@ -21,7 +23,7 @@
 		session_destroy();
 	}
 	
-	$invalid = False; // DEBUG
+	// $invalid = False; // DEBUG
 ?>
 
 <?php include("head.php"); ?>
@@ -82,8 +84,8 @@
 	</div>
 </div>
 
-
-<script type="text/javascript" src ="js/common.js"></script>
-<script type="text/javascript" src ="js/test3.js"></script>
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"></script>
+<script type="text/javascript" src="js/common.js"></script>
+<script type="text/javascript" src="js/test3.js"></script>
 
 <?php include("footer.php"); ?>
