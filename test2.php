@@ -54,7 +54,7 @@
 		if(!$nonvalid && ($_SESSION["music"] < 0 || $_SESSION["music"] > 5))
 			$nonvalid = True;
 			
-		if(!$nonvalid && $_POST["final_married"] != "")
+		if(!$nonvalid && isset($_POST["final_married"]))
 			$_SESSION["married"] = False;
 		else
 			$_SESSION["married"] = True;

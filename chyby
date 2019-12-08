@@ -1,5 +1,2 @@
-- dodelat stranku result, z $_SESSION pouzit udaje, vsechno uz je nachystany v kodu
 - udelat prezentaci na pondeli
-- zkusit spatne vstupy, jestli funguje spravne overovani
-- zkusit na pdo sql injection
-- otestovat to na pár lidech
+- napsat testovaci protokol a dokoncit zpravu

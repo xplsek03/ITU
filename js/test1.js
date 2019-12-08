@@ -137,8 +137,9 @@ $(document).ready(function() {
       		min: 5
     		},
     		child: {
-      		required:  false,
-      		max: 25
+      		required:  true,
+      		max: 25,
+      		min: 0
     		}
   		}
     });

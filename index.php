@@ -34,7 +34,7 @@
 </div>
 
 <footer>
-&copy; xplsek03 + xholas01, 2019. Hudba z 8. testu od <a href="https://www.bensound.com/royalty-free-music" target="_blank">royalty.</a>
+&copy; xplsek03 2019, FIT VUT. Hudba z 8. testu od <a href="https://www.bensound.com/royalty-free-music" target="_blank">royalty.</a>
 </footer>
 
 <? include("footer.php"); ?>

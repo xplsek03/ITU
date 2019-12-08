@@ -472,3 +472,19 @@ pre {
 	max-width: 500px;
 	margin-bottom: 25px;
 }
+
+
+/* tabulka vysledku */
+.rezult {
+    border-spacing: 0;
+    border-collapse: separate;
+    border: 1px solid #f0f0f0;
+}
+
+.rezult td {
+	padding: 10px;
+}
+
+.rezult-head {
+	font-weight: bold;
+}
